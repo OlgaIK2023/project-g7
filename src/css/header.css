@@ -119,11 +119,12 @@
 }
 
 .btn-close{
-    border: none;
-      background-color: transparent;
-      width: 28px;
-      height: 28px;
-      padding: 0;
+  border: none;
+  display:flex;
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+  padding: 0;
     }
 
 .icon-close{
@@ -136,7 +137,7 @@
 }
 
 .btn-menu {
-  display: none;
+  display: flex;
   border: none;
   background-color: transparent;
   width: 28px;
@@ -175,7 +176,6 @@
   .header-container {
     padding-top: 13px;
     padding-bottom: 13px;
-
   }
 
   .nav-menu {

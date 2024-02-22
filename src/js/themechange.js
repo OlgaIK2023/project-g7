@@ -6,7 +6,9 @@ const shoppingIcon=document.querySelector('.shopping-icon');
 const body = document.body;
 const header = document.querySelector('header');
 const closeIcon = document.querySelector('.icon-close');
+
 switcher.addEventListener('click', changeTheme);
+
 function changeTheme() {
     if (switcher.checked) {
         shoppingIcon.classList.add('dark-icons');
