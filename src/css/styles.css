@@ -8,6 +8,12 @@
 @import url('./components.css');
 @import url('./header.css');
 
+@import url('./homepage.css');
+@import url('./mobile-menu.css');
+@import url('./shopping-list.css');
+@import url('./modalwindow.css');
+
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
