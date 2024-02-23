@@ -16,6 +16,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 24px;
+  border: 2px solid rgb(17, 17, 17);
 }
 
 .close-modal {
@@ -76,6 +77,7 @@
   gap: 20px;
   width: 115px;
   height: 32px;
+  cursor: pointer;
 }
 
 .add-lokalstorage {
@@ -99,7 +101,6 @@
 }
 
 .remove-lokalstorage {
-  /* btn */
   position: absolute;
   width: auto;
   height: 46px;
@@ -119,6 +120,8 @@
 }
 
 .congrat {
+  position: absolute;
+
   width: 242px;
   height: 36px;
   left: 47px;
@@ -136,4 +139,67 @@
 
 .hiden {
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 579px;
+    height: 465px;
+    padding: 40px;
+  }
+  .hiden {
+    display: none;
+  }
+  .close-modal {
+    top: 31px;
+    right: 24px;
+    width: 24px;
+    height: 28px;
+    padding: 0;
+  }
+
+  .desctop {
+    display: flex;
+    gap: 24px;
+  }
+
+  .img-modal {
+    min-width: 192px;
+    height: 281px;
+    margin-bottom: 0;
+  }
+
+  .lauch {
+    width: auto;
+  }
+
+  .add-lokalstorage {
+    height: 64px;
+    left: 40px;
+    top: 361px;
+    padding: 20px 173px 20px 173px;
+  }
+
+  .remove-lokalstorage {
+    position: absolute;
+    width: 499px;
+    height: 64px;
+    left: 40px;
+    top: 361px;
+    text-align: center;
+  }
+
+  .congrat {
+    position: absolute;
+    width: 324px;
+    left: 128px;
+    right: 127px;
+    top: 433px;
+    bottom: 40px;
+    color: rgba(17, 17, 17, 0.5);
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -4%;
+    text-align: center;
+  }
 }
