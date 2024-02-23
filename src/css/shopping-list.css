@@ -1,101 +1,77 @@
-.container {
-    border: 2px solid rgba(79, 46, 232, 0.4);
-        border-radius: 16px;
-        padding: 30px 24px;
-        width: 335px;
-        height: 170px;
-        display: flex;
-        position: relative;
-}
-.discription {
+.container {}
 
-}
+.discription {}
 
 .main-name-list {
     color: #4F2EE8;
 }
 
-.main-name {
-    
-    
-}
+.main-name {}
 
 .one-book {
-    
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    padding: 30px 24px;
+    width: 335px;
+    height: 170px;
+    display: flex;
+    justify-content: space-between
 }
 
 .book-name {
     font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.12;
-        letter-spacing: -0.04em;
-        text-transform: uppercase;
-        color: var(--black);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--black);
 }
 
 .type-name {
     font-family: "DM Sans", sans-serif;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.17;
-        letter-spacing: 0.03em;
-        color: #b4afaf;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: #B4AFAF;
 }
 
 .text-discription {
     white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        font-family: "DM Sans", sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.29;
-            letter-spacing: -0.04em;
-            color: #111;
-
-            width: 193px;
-            height: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    color: #111;
+    width: 193px;
+    height: 68px;
 }
 
 .name-author {
     font-family: "DM Sans", sans-serif;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.17;
-        letter-spacing: -0.04em;
-        color: #b4afaf;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: #B4AFAF;
 }
 
 .img {
     display: block;
     position: absolute;
-        /* Позиціонування відносно контейнера .container */
-        left: 0;
-        /* Розташовуємо ліворуч */
-        top: 0;
+    /* Позиціонування відносно контейнера .container */
+    left: 0;
+    /* Розташовуємо ліворуч */
+    top: 0;
 }
+
 .img-book {
-
     border-radius: 8px;
-        width: 100px;
-        height: 142px;
-    }
-
-
-
-
-
-    .basket {
-        background-color: #4F2EE8;
-        width: 28px;
-            height: 28px;
-            border-radius: 100%;
-                
-    }
-
-    .trash {
-fill: ffffff;
-    }
+    width: 100px;
+    height: 142px;
+}
