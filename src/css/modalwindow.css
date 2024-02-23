@@ -119,6 +119,14 @@
   text-transform: uppercase;
 }
 
+.add-lokalstorage:hover,
+.remove-lokalstorage:hover,
+.add-lokalstorage:focus,
+.remove-lokalstorage:focus {
+  color: rgb(255, 255, 255);
+  background: rgb(79, 46, 232);
+}
+
 .congrat {
   position: absolute;
 
