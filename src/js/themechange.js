@@ -11,13 +11,13 @@ switcher.addEventListener('click', changeTheme);
 
 function changeTheme() {
     if (switcher.checked) {
-        shoppingIcon.classList.add('dark-icons');
+        {shoppingIcon.classList.add('dark-icons');
         shoppingList.classList.add('dark-icons');
         closeIcon.classList.add('dark-icons');
         logo.classList.add('dark-icons');
         menu.classList.add('dark-menu');
         body.classList.add('dark-mode-body');
-        header.classList.add('dark-mode');
+        header.classList.add('dark-mode');}
     } else {
         shoppingIcon.classList.remove('dark-icons');
         shoppingList.classList.remove('dark-icons');

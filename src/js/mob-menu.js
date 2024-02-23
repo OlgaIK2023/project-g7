@@ -1,9 +1,14 @@
 const buttonClose = document.querySelector('.btn-close');
 const buttonMenu = document.querySelector('.btn-menu');
-console.log(buttonClose);
-console.log(buttonMenu);
 buttonMenu.addEventListener('click', openModalMenu);
 const modalMenu = document.querySelector('.menu-section');
+
+buttonClose.addEventListener('click', closeModalMenu);
+function closeModalMenu(){
+modalMenu.classList.remove('is-open');
+buttonMenu.classList.remove('hidden');
+buttonClose.classList.add('hidden');
+}
 
 function openModalMenu() {
     modalMenu.classList.add('is-open');
@@ -11,9 +16,3 @@ function openModalMenu() {
     buttonClose.classList.remove('hidden');
 }
 
-buttonClose.addEventListener('click', closeModalMenu);
-function closeModalMenu(){
-    modalMenu.classList.remove('is-open');
-  buttonMenu.classList.remove('hidden');
-   buttonClose.classList.add('hidden');
-}
