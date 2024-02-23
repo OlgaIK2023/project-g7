@@ -97,3 +97,43 @@
   border-radius: 43px;
   background-color: transparent;
 }
+
+.remove-lokalstorage {
+  /* btn */
+  position: absolute;
+  width: auto;
+  height: 46px;
+  left: 28px;
+  top: 676px;
+  padding: 14px 23px 14px 23px;
+  box-sizing: border-box;
+  border: 2px solid rgb(79, 46, 232);
+  border-radius: 40px;
+  color: rgb(17, 17, 17);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -1%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.congrat {
+  width: 242px;
+  height: 36px;
+  left: 47px;
+  right: 46px;
+  top: 730px;
+  bottom: 40px;
+  color: rgba(17, 17, 17, 0.5);
+  font-family: DM Sans;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: -4%;
+  text-align: center;
+}
+
+.hiden {
+  display: none;
+}
