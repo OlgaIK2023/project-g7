@@ -1,7 +1,9 @@
 .header {
+  position: relative;
   background-color: #FFFFFF;
   border: 1.50px solid #111;
   border-radius: 0 0 8px 8px;
+  z-index: 1;
 }
 
 .header-container {
