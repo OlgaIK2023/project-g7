@@ -134,6 +134,9 @@
   background: rgb(79, 46, 232);
 }
 
+.close {
+  display: none;
+}
 .congrat {
   position: absolute;
 
