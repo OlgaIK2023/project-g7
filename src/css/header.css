@@ -101,14 +101,14 @@
   transition: 0.4s;
 }
 
-.switch_input:focus+.switch_slider {
+/* .switch_input:hover+.switch_slider {
   box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
-}
+}  */
 
 .switch_input:checked+.switch_slider {
   background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
-}
+} 
 
 .switch_input:checked+.switch_slider::before {
   transform: translateX(20px);
@@ -230,9 +230,5 @@
   transition: 0.4s;
 }
 
-.dark-menu {
-  stroke: #fff;
-  transition: 0.4s;
-}
 
 /* ---------- */

@@ -1,29 +1,19 @@
 const switcher = document.querySelector('#theme');
-const menu = document.querySelector('.icon-menu');
-const logo = document.querySelector('.icon-logo');
-const shoppingList = document.querySelector('.nav-shopping');
-const shoppingIcon=document.querySelector('.shopping-icon');
 const body = document.body;
 const header = document.querySelector('header');
-const closeIcon = document.querySelector('.icon-close');
-
+const icons = [document.querySelector('.icon-menu'),
+    document.querySelector('.icon-logo'),
+    document.querySelector('.nav-shopping'),
+    document.querySelector('.shopping-icon'),
+    document.querySelector('.icon-close')];
 switcher.addEventListener('click', changeTheme);
-
 function changeTheme() {
     if (switcher.checked) {
-        {shoppingIcon.classList.add('dark-icons');
-        shoppingList.classList.add('dark-icons');
-        closeIcon.classList.add('dark-icons');
-        logo.classList.add('dark-icons');
-        menu.classList.add('dark-menu');
+        icons.forEach(icon => icon.classList.add('dark-icons'));
         body.classList.add('dark-mode-body');
-        header.classList.add('dark-mode');}
+        header.classList.add('dark-mode'); 
     } else {
-        shoppingIcon.classList.remove('dark-icons');
-        shoppingList.classList.remove('dark-icons');
-        closeIcon.classList.remove('dark-icons');
-        logo.classList.remove('dark-icons');
-        menu.classList.remove('dark-menu');
+        icons.forEach(icon => icon.classList.remove('dark-icons'));
         body.classList.remove('dark-mode-body');
         header.classList.remove('dark-mode'); 
     }
