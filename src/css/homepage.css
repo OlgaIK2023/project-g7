@@ -1,6 +1,6 @@
 .homepage{
     padding-top: 40px;
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
     ::-webkit-scrollbar {
             width: 8px;
             background-color: transparent;
@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 .category-name{
-    color: rgba(17, 17, 17, 0.6);
+    /* color: rgba(17, 17, 17, 0.6); */
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
@@ -191,7 +191,7 @@
         height: 472px;
     }
     .category-name{
-        color: rgba(17, 17, 17, 0.6);
+        /* color: rgba(17, 17, 17, 0.6); */
         font-size: 18px;
         font-weight: 400;
         line-height: 24px;
@@ -231,7 +231,7 @@
         height: 472px;
     }
     .category-name {
-        color: rgba(17, 17, 17, 0.6);
+        /* color: rgba(17, 17, 17, 0.6); */
         font-size: 18px;
         font-weight: 400;
         line-height: 24px;
