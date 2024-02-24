@@ -81,4 +81,4 @@ import{a as p}from"./vendor-0cb09735.js";(function(){const t=document.createElem
           src="${r}" alt="${t}"/></span>
         </a>
       </li>`}).join("")}function be(e){e.target.classList.contains("js-support")}let i=0,B=6,H=1;document.querySelector(".slider-container");const w=document.querySelector(".support-list"),Ee=document.querySelector(".slider-button"),S=document.querySelectorAll(".support-link");let c=S.length;const A=32,fe=H*A;S.forEach(e=>{e.style.minHeight=`${A}px`});Ee.addEventListener("click",()=>{Ce()>=H?i-=fe:i=0,w.style.transition="transform 0.3s ease-out",F(),setTimeout(()=>{w.style.transition=""},300)});window.addEventListener("resize",()=>{c=S.length,F()});const F=()=>{w.style.transform=`translateY(${i}px)`};function Ce(){const e=window.innerWidth;return e>=1440?c-(Math.abs(i)+B*A)/39:e>=768?c-(Math.abs(i)+B*A)/40:c-(Math.abs(i)+B*A)/55}
-//# sourceMappingURL=main-3309ab2a.js.map
+//# sourceMappingURL=main-d2991cdf.js.map
