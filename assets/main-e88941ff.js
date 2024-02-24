@@ -28,4 +28,4 @@ import{a as y}from"./vendor-0cb09735.js";(function(){const t=document.createElem
           src="${r}" alt="${t}"/></span>
         </a>
       </li>`}).join("")}function he(e){e.target.classList.contains("js-support")}let i=0,w=6,M=1;document.querySelector(".slider-container");const m=document.querySelector(".support-list"),Qe=document.querySelector(".slider-button"),C=document.querySelectorAll(".support-link");let l=C.length;const a=32,Se=M*a;C.forEach(e=>{e.style.minHeight=`${a}px`});Qe.addEventListener("click",()=>{Ee()>=M?i-=Se:i=0,m.style.transition="transform 0.3s ease-out",q(),setTimeout(()=>{m.style.transition=""},300)});window.addEventListener("resize",()=>{l=C.length,q()});const q=()=>{m.style.transform=`translateY(${i}px)`};function Ee(){const e=window.innerWidth;return e>=1440?l-(Math.abs(i)+w*a)/39:e>=768?l-(Math.abs(i)+w*a)/40:l-(Math.abs(i)+w*a)/55}
-//# sourceMappingURL=main-dde63af6.js.map
+//# sourceMappingURL=main-e88941ff.js.map
