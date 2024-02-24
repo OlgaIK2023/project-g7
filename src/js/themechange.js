@@ -1,7 +1,7 @@
 const switcher = document.querySelector('#theme');
 const body = document.body;
 const section = document.querySelector('.homepage');
-// const categoryName = document.querySelectorAll('.category-name');
+const buttonSeeMore = document.querySelectorAll('.see-more-btn');
 // console.log(categoryName);
 const header = document.querySelector('header');
 const icons = [document.querySelector('.icon-menu'),
@@ -17,6 +17,7 @@ function changeTheme() {
         body.classList.add('dark-mode-body');
         header.classList.add('dark-mode-header'); 
         // categoryName.classList.add('dark-color-list');
+        // buttonSeeMore.classList.add( );
     } else {
         icons.forEach(icon => icon.classList.remove('dark-icons'));
         body.classList.remove('dark-mode-body');
