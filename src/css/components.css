@@ -34,8 +34,8 @@ body{
     
     @media screen and (min-width:1440px) {
         .container {
-            max-width: 1440px;
-            padding-left: 24px;
-            padding-right: 24px;
+            max-width: 1392px;
+            padding-left: 0px;
+            padding-right: 0px;
         }
     }
