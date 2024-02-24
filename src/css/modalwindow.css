@@ -1,0 +1,223 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.4);
+}
+
+.modal {
+  width: 335px;
+  height: 762px;
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 24px;
+  border: 2px solid rgb(17, 17, 17);
+}
+
+.close-modal {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+.modal-svg-close {
+  fill: transparent;
+  stroke: #111111;
+}
+
+.img-modal {
+  max-width: 100%;
+  height: 408px;
+  border: 1px solid;
+  border-radius: 18px;
+  margin-bottom: 14px;
+}
+
+.boock-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: rgb(17, 17, 17);
+  margin-bottom: 4px;
+}
+
+.author {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: rgb(180, 175, 175);
+}
+
+.tittle-books {
+  margin-bottom: 18px;
+}
+
+.about-book {
+  margin-bottom: 17px;
+}
+
+.sale-place {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 115px;
+  height: 32px;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.add-lokalstorage {
+  position: absolute;
+  width: auto;
+  height: 46px;
+  left: 62px;
+  top: 695px;
+  padding: 14px 28px 14px 28px;
+  color: rgb(17, 17, 17);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -1%;
+  text-align: left;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border: 2px solid rgb(79, 46, 232);
+  border-radius: 43px;
+  background-color: transparent;
+}
+
+.remove-lokalstorage {
+  position: absolute;
+  width: auto;
+  height: 46px;
+  left: 28px;
+  top: 676px;
+  padding: 14px 23px 14px 23px;
+  box-sizing: border-box;
+  border: 2px solid rgb(79, 46, 232);
+  border-radius: 40px;
+  color: rgb(17, 17, 17);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -1%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.sale-place-links:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.add-lokalstorage:hover,
+.remove-lokalstorage:hover,
+.add-lokalstorage:focus,
+.remove-lokalstorage:focus {
+  color: rgb(255, 255, 255);
+  background: rgb(79, 46, 232);
+}
+
+.close {
+  display: none;
+}
+.congrat {
+  position: absolute;
+
+  width: 242px;
+  height: 36px;
+  left: 47px;
+  right: 46px;
+  top: 730px;
+  bottom: 40px;
+  color: rgba(17, 17, 17, 0.5);
+  font-family: DM Sans;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: -4%;
+  text-align: center;
+}
+
+.hiden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 579px;
+    height: 465px;
+    padding: 40px;
+  }
+  .hiden {
+    display: none;
+  }
+  .close-modal {
+    top: 31px;
+    right: 24px;
+    width: 24px;
+    height: 28px;
+    padding: 0;
+  }
+
+  .desctop {
+    display: flex;
+    gap: 24px;
+  }
+
+  .img-modal {
+    min-width: 192px;
+    height: 281px;
+    margin-bottom: 0;
+  }
+
+  .lauch {
+    width: auto;
+  }
+
+  .add-lokalstorage {
+    height: 64px;
+    left: 40px;
+    top: 361px;
+    padding: 20px 173px 20px 173px;
+  }
+
+  .remove-lokalstorage {
+    position: absolute;
+    width: 499px;
+    height: 64px;
+    left: 40px;
+    top: 361px;
+    text-align: center;
+  }
+
+  .congrat {
+    position: absolute;
+    width: 324px;
+    left: 128px;
+    right: 127px;
+    top: 433px;
+    bottom: 40px;
+    color: rgba(17, 17, 17, 0.5);
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -4%;
+    text-align: center;
+  }
+}

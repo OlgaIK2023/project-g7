@@ -1,22 +1,28 @@
 
-body{
-background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
-}
-
 .menu-section {
+    position:fixed;
+    top:0;
+    right: 0;
+    visibility: visible;
+    opacity: 0;
     padding-top: 184px;
-    min-height:100vh;
-    background-image:url(../img/mob-menu/books-1x.png);
+    min-width: 100%;
+    min-height: 812px;
+    height:100vh;
+    background-image: url(../img/mob-menu/books-1x.png), radial-gradient(194.44% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
     background-repeat:no-repeat;
     background-position: bottom 0px right 0px;
     background-size: contain;
+    z-index:1;
 }
+
 
 @media (min-device-pixel-ratio: 2),
 (min-resolution: 192dpi),
 (min-resolution: 2dppx) {
     .menu-section{
-        background-image: url(../img/mob-menu/books-2x.png);  
+        background-image: url(../img/mob-menu/books-2x.png),
+            radial-gradient(194.44% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
     }
 }
 
@@ -65,7 +71,18 @@ background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 
     display: none;
 }
 
-body {
-background:#F6F6F6;
 }
+
+.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+    visibility:hidden;
+    opacity: 0;
+    pointer-events: none;
 }
