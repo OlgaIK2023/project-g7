@@ -1,7 +1,7 @@
 .homepage {
     padding-top: 40px;
 
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
 
     ::-webkit-scrollbar {
         width: 8px;
