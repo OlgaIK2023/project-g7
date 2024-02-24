@@ -1,16 +1,25 @@
 .homepage {
     padding-top: 40px;
-    /* background: rgb(255, 255, 255); */
+
+    background: rgb(255, 255, 255);
+
     ::-webkit-scrollbar {
         width: 8px;
         background-color: transparent;
     };
+
+    
     ::-webkit-scrollbar-thumb {
         height: 114px;
         background: #E0E0E0;
         border-radius: 12px;
+
     };
-};
+
+    
+}
+
+
 
 .navigation-category {
     display: flex;
@@ -32,20 +41,34 @@
     cursor: pointer;
 }
 
+
+
+
 .category-name{
     /* color: rgba(17, 17, 17, 0.6); */
+
 
     font-size: 16px;
     font-weight: 400;
     text-align: left;
     transition: 250ms all ease;
 }
+
+
+.category-name:hover,
+.category-name:focus,
+.category-name:active {
+    color: rgb(79, 46, 232);
+}
+
 .category-name.all {
     color: #4f2ee8;
+
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .category-name:hover,
 .category-name:focus,
 .category-name:active {
@@ -56,11 +79,13 @@
 }
 
 
+
 .aside-menu {
     display: flex;
     gap: 40px;
     flex-direction: column;
 }
+
 
 .support {
     width: 335px;
@@ -69,6 +94,7 @@
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
     background: radial-gradient(190.70% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
 }
+
 
 .gallery {
     width: 100%;
@@ -86,10 +112,13 @@
     gap: 24px;
 }
 
+
+
 .title-wrapper {
     display: flex;
     flex-direction: row;
     gap: 8px;
+
     width: 100%;
 }
 
@@ -154,12 +183,15 @@
     flex-direction: row;
     gap: 24px;
 }
+
 .gallery-item:not(:first-child) {
     display: none;
 }
+
 .gallery-list-group .gallery-item:nth-child(-n+1){
     display: block;
 }
+
 
 .list-group-name {
     color: rgb(180, 175, 175);
@@ -234,8 +266,11 @@
         height: 472px;
     }
 
+
+    
     .category-name{
         /* color: rgba(17, 17, 17, 0.6); */
+
         font-size: 18px;
 
         font-weight: 400;
@@ -292,10 +327,17 @@
         align-items: start;
     }
 
+
+    /*.support {
+        width: 356px;
+        height: 472px;
+    }*/
+
     .support {
         width: 356px;
         height: 472px;
     }
+
 
     .gallery {
         padding-top: 0
