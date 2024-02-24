@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { showBoockDetails } from './modalwindow';
 
 const categoryList = document.querySelector('.category-list'),
   galleryList = document.querySelector('.gallery-list'),
@@ -139,9 +140,33 @@ function isCorrectTextLength(text) {
 
 //додаємо обробники подій
 categoryList.addEventListener('click', onClickCategory);
-allCategories.addEventListener('click', showAllCategories);
+allCategories.addEventListener('click', onClickAllCategory);
 
 async function onClickCategory(e) {
   await renderPageByCategory(e);
-  console.log('vse');
+  addEventListeners();
+}
+
+async function onClickAllCategory(e) {
+  await showAllCategories(e);
+  addEventListeners();
+}
+
+export const addEventListeners = () => {
+  let liGalleryItems = document.querySelectorAll('.gallery-item');
+
+  liGalleryItems.forEach(item => {
+    item.addEventListener('click', onCklickBoock);
+  });
+};
+
+Promise.all([showCategoryList(), showAllCategories()]).then(() => {
+  addEventListeners();
+});
+
+async function onCklickBoock(e) {
+  let id = e.target.closest('.gallery-item').id;
+
+  const response = await fetchBookById(id);
+  showBoockDetails(response);
 }

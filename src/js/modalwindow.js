@@ -1,41 +1,16 @@
-import {
-  fetchBookById,
-  showBookById,
-  showCategoryList,
-  showAllCategories,
-} from './render-functions';
-
-const modal = document.querySelector('.backdrop');
-const closeModalWindow = document.querySelector('.close-modal');
-
-Promise.all([showCategoryList(), showAllCategories()]).then(() => {
-  let liGalleryItems = document.querySelectorAll('.gallery-item');
-
-  liGalleryItems.forEach(item => {
-    item.addEventListener('click', onClickGalleryItem);
-  });
-});
-
-async function onClickGalleryItem(e) {
-  let id = e.target.closest('.gallery-item').id;
-
-  const response = await fetchBookById(id);
+export const showBoockDetails = response => {
   renderModalwindow(response);
-  console.log(response);
-}
+
+  const modal = document.querySelector('.backdrop');
+  const closeModalWindow = document.querySelector('.close-modal');
+
+  closeModalWindow.addEventListener('click', closeModal);
+  modal.addEventListener('click', modalClickHandler);
+  document.addEventListener('keydown', keydownHandler);
+};
 
 async function renderModalwindow(response) {
-  const markup = response
-    .map(
-      ({
-        book_image,
-        author,
-        description,
-        title,
-        amazon_product_url,
-        book_uri,
-      }) => {
-        return `<div class="backdrop close">
+  const markup = `<div class="backdrop">
   <div class="modal">
     <button class="close-modal">
       <svg class="modal-svg-close" width="24" height="24">
@@ -44,20 +19,20 @@ async function renderModalwindow(response) {
     </button>
 
     <div class="desctop">
-      <img src="${book_image}" alt="${title}" class="img-modal" />
+      <img src="${response.book_image}" alt="${response.title}" class="img-modal" />
       <div class="lauch">
         <div class="tittle-books">
-          <h2 class="boock-name">${title}</h2>
-          <p class="author">${author}</p>
+          <h2 class="boock-name">${response.title}</h2>
+          <p class="author">${response.author}</p>
         </div>
 
         <p class="about-book">
-         ${description}
+         ${response.description}
         </p>
 
         <ul class="sale-place">
           <li>
-            <a href="${amazon_product_url}" target="_blank"
+            <a href="${response.amazon_product_url}" target="_blank"
               ><img
                 class="sale-place-links"
                 src="../img/amazon.png"
@@ -67,7 +42,7 @@ async function renderModalwindow(response) {
             /></a>
           </li>
           <li>
-            <a href="${book_uri}" target="_blank"
+            <a href="${response.book_uri}" target="_blank"
               ><img
                 class="sale-place-links"
                 src="../img/apple.png"
@@ -91,25 +66,27 @@ async function renderModalwindow(response) {
   </div>
 </div>
 `;
-      }
-    )
-    .join('');
 
-  return markup;
+  const main = document.querySelector('main');
+  main.insertAdjacentHTML('beforeend', markup);
 }
 
 function closeModal() {
-  modal.classList.add('close');
   removeEventListeners();
+  const modal = document.querySelector('.backdrop');
+  modal.remove();
 }
 
 function removeEventListeners() {
+  const modal = document.querySelector('.backdrop');
+  const closeModalWindow = document.querySelector('.close-modal');
   closeModalWindow.removeEventListener('click', closeModal);
   modal.removeEventListener('click', modalClickHandler);
   document.removeEventListener('keydown', keydownHandler);
 }
 
 function modalClickHandler(event) {
+  const modal = document.querySelector('.backdrop');
   if (event.target === modal) {
     closeModal();
   }
@@ -120,7 +97,3 @@ function keydownHandler(event) {
     closeModal();
   }
 }
-
-closeModalWindow.addEventListener('click', closeModal);
-modal.addEventListener('click', modalClickHandler);
-document.addEventListener('keydown', keydownHandler);
