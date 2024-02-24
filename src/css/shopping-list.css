@@ -73,7 +73,7 @@
     line-height: 1.17;
     letter-spacing: -0.04em;
     color: #B4AFAF;
-    padding-right: 66px;
+    padding-right: 58px;
 }
 
 .img {
@@ -113,9 +113,18 @@
     display: flex;
         align-items: center;
         padding-top: 20px;
+        gap: 8px;
 
   }
+.amazon {filter: grayscale(100%);
+    width: 32px;
+    height: 11px;
+}
 
+.apple {filter: grayscale(100%);
+width: 16px;
+    height: 16px;
+}
 
   @media screen and (min-width: 768px) {
     
@@ -147,8 +156,8 @@ display: -webkit-box;
 
 
 .name-author {
-    
-    padding-right: 353px;
+   
+    padding-right: 348px;
 }
 
 .basket {
@@ -156,7 +165,16 @@ display: -webkit-box;
     margin-left: 368px;
     
 }
-  }
+
+.amazon {
+    width: 48px;
+    height: 15px;
+}
+
+.apple {
+    width: 28px;
+    height: 27px;
+  } }
 
 
   @media screen and (min-width: 1440px) {
