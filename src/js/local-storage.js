@@ -41,7 +41,7 @@ export function loadFromLS() {
 
 // import { isBookAlreadyExist, deleteFromLS, saveToLS, loadFromLS } from "./localStorage";
 
-// const form = document.querySelector('.submit-btn');
+// const form = document.querySelector('.add-lokalstorage');
 
 // const book = {
 //   "_id": "642fd89ac8cf5ee957f12361",
