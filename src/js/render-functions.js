@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const categoryList = document.querySelector('.category-list'),
-    galleryList = document.querySelector('.gallery-list'),
+ export const categoryList = document.querySelector('.category-list'),
+   galleryList = document.querySelector('.gallery-list'),
     allCategories = document.querySelector('#all-categories'),
     categoryName = document.querySelector('.category-title');
 
@@ -72,7 +72,7 @@ function renderTopCategoriesBooks(data) {
     }).join('');
     return markup;
 }
-function renderListGroup(data) {
+  function renderListGroup(data) {
     categoryName.textContent = 'Best Sellers Books';
     const { list_name, books } = data;
     const markup = `
