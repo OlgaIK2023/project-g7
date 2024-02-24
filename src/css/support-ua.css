@@ -42,10 +42,10 @@
     line-height: 1.2;
     letter-spacing: -0.04em;
     padding-bottom: 40px;
-    text-shadow: -1px -1px 0 black,
+    /* text-shadow: -1px -1px 0 black,
         1px -1px 0 black,
         -1px 1px 0 black,
-        1px 1px 0 black;
+        1px 1px 0 black; */
 }
 
 .support-list {
