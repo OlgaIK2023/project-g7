@@ -1,5 +1,8 @@
-.container {}
-
+.title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
 .discription {}
 
 .main-name-list {
@@ -11,11 +14,12 @@
 .one-book {
     border: 2px solid rgba(79, 46, 232, 0.4);
     border-radius: 16px;
-    padding: 30px 24px;
+    padding: 14px 14px;
     width: 335px;
     height: 170px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+     margin-top: 20px; 
 }
 
 .book-name {
@@ -26,8 +30,13 @@
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--black);
+    padding-bottom: 4px;
 }
-
+.up-part {
+    display: flex;
+        align-items: center;
+        
+}
 .type-name {
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
@@ -35,12 +44,11 @@
     line-height: 1.17;
     letter-spacing: 0.03em;
     color: #B4AFAF;
+    padding-bottom: 8px;
 }
 
 .text-discription {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -48,7 +56,13 @@
     letter-spacing: -0.04em;
     color: #111;
     width: 193px;
-    height: 68px;
+    height: 56px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        
 }
 
 .name-author {
@@ -59,14 +73,13 @@
     line-height: 1.17;
     letter-spacing: -0.04em;
     color: #B4AFAF;
+    padding-right: 66px;
 }
 
 .img {
     display: block;
     position: absolute;
-    /* Позиціонування відносно контейнера .container */
     left: 0;
-    /* Розташовуємо ліворуч */
     top: 0;
 }
 
@@ -74,4 +87,105 @@
     border-radius: 8px;
     width: 100px;
     height: 142px;
+    margin-right: 14px;
 }
+
+
+  .basket {
+      background-color: #4F2EE8;
+      width: 28px;
+      height: 28px;
+      border-radius: 100%;
+    margin-left: 51px;
+    display: flex;
+        align-items: center; 
+        justify-content: center;
+  }
+
+  .trash {
+      fill: #ffffff;
+    
+        
+        
+  }
+
+  .book-app {
+    display: flex;
+        align-items: center;
+        padding-top: 20px;
+
+  }
+
+
+  @media screen and (min-width: 768px) {
+    
+
+    .one-book {
+        width: 704px;
+        height: 213px;
+        padding: 24px 24px;
+        }
+
+.text-discription {
+width: 508px;
+height: 38px;
+display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.img-book {
+    width: 116px;
+    height: 165px;
+    margin-right: 24px;
+}
+
+.book-app {
+    
+    padding-top: 56px;
+
+}
+
+
+.name-author {
+    
+    padding-right: 353px;
+}
+
+.basket {
+   
+    margin-left: 368px;
+    
+}
+  }
+
+
+  @media screen and (min-width: 1440px) {
+   
+
+    .one-book {
+        width: 996px;
+        height: 213px;
+    }
+
+    .text-discription {
+        width: 808px;
+        height: 53px;
+    }
+
+
+
+    .name-author {
+
+        padding-right: 645px;
+    }
+.book-app {
+
+    padding-top: 46px;
+
+}
+    .basket {
+
+        margin-left: 660px;
+
+    }
+  }
