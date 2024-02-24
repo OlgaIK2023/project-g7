@@ -1,5 +1,8 @@
 const switcher = document.querySelector('#theme');
 const body = document.body;
+const section = document.querySelector('.homepage');
+// const categoryName = document.querySelectorAll('.category-name');
+// console.log(categoryName);
 const header = document.querySelector('header');
 const icons = [document.querySelector('.icon-menu'),
     document.querySelector('.icon-logo'),
@@ -10,12 +13,15 @@ switcher.addEventListener('click', changeTheme);
 function changeTheme() {
     if (switcher.checked) {
         icons.forEach(icon => icon.classList.add('dark-icons'));
+        section.classList.add('dark-mode-body');
         body.classList.add('dark-mode-body');
-        header.classList.add('dark-mode'); 
+        header.classList.add('dark-mode-header'); 
+        // categoryName.classList.add('dark-color-list');
     } else {
         icons.forEach(icon => icon.classList.remove('dark-icons'));
         body.classList.remove('dark-mode-body');
-        header.classList.remove('dark-mode'); 
+        header.classList.remove('dark-mode-header'); 
+        section.classList.remove('dark-mode-body');
     }
     
 };
