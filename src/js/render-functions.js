@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { showBoockDetails } from './modalwindow';
 
-const categoryList = document.querySelector('.category-list'),
-  galleryList = document.querySelector('.gallery-list'),
-  allCategories = document.querySelector('#all-categories'),
-  categoryName = document.querySelector('.category-title');
+
+ export const categoryList = document.querySelector('.category-list'),
+   galleryList = document.querySelector('.gallery-list'),
+    allCategories = document.querySelector('#all-categories'),
+    categoryName = document.querySelector('.category-title');
+
 
 async function fetchCategories() {
   const response = await axios.get(
@@ -72,8 +74,7 @@ function renderCategory(data) {
 function renderTopCategoriesBooks(data) {
   const markup = data
     .map(({ book_image, author, title, _id }) => {
-      return `
-        <li class="gallery-item" id="${_id}">
+      return `<li class="gallery-item" id="${_id}">
             <div class="ig-wrapper">
                 <img src="${book_image}" alt="" class="book-cover" />
             </div>
@@ -84,11 +85,12 @@ function renderTopCategoriesBooks(data) {
     .join('');
   return markup;
 }
+
 function renderListGroup(data) {
+
   categoryName.textContent = 'Best Sellers Books';
   const { list_name, books } = data;
-  const markup = `
-    <li class="gallery-list-group">
+  const markup = `<li class="gallery-list-group">
       <h3 class="list-group-name">${list_name}</h3>
         <ul class="gallery-list-item">
           ${renderTopCategoriesBooks(books)}
@@ -99,12 +101,12 @@ function renderListGroup(data) {
   galleryList.innerHTML += markup;
 }
 function renderListByCategory(data) {
+
   categoryName.textContent = data[0].list_name; //беремо назву категорії у першого елемента
   console.log(data);
   const markup = data
     .map(({ book_image, title, author, _id }) => {
-      return `
-        <li class="gallery-item" id="${_id}">
+      return `<li class="gallery-item" id="${_id}">
           <img src="${book_image}" alt="${title}" class="book-cover" />
           <h3 class="book-title">${isCorrectTextLength(title)}</h3>
           <h5 class="book-author">${isCorrectTextLength(author)}</h5>
@@ -115,6 +117,7 @@ function renderListByCategory(data) {
 }
 
 async function renderPageByCategory(e) {
+
   if (e.target === e.currentTarget) return;
   const categoryName = e.target.textContent;
   try {
@@ -125,6 +128,7 @@ async function renderPageByCategory(e) {
       renderListByCategory(response.data);
     } else {
       showAllCategories();
+
     }
   } catch (error) {
     console.log(error);
@@ -132,10 +136,22 @@ async function renderPageByCategory(e) {
 }
 
 function isCorrectTextLength(text) {
+
   const maximumSymbolsCount = 16;
   return text.length >= maximumSymbolsCount
     ? `${text.slice(0, maximumSymbolsCount)}...`
     : text;
+
+}
+
+function renderCategoryTitleByColors(categoryTitle) {
+    let arrayFromBlackWords = categoryTitle.split(' ');
+    const blueWord = arrayFromBlackWords[arrayFromBlackWords.length - 1];
+    arrayFromBlackWords = arrayFromBlackWords.slice(0, arrayFromBlackWords.length - 1);
+    const blackWords = arrayFromBlackWords.join(' ');
+
+    categoryName.textContent = `${blackWords}`;
+    categoryName.nextElementSibling.textContent = `${blueWord}`;
 }
 
 //додаємо обробники подій
