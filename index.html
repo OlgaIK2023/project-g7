@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
   
   <script type="module" crossorigin src="/project-g7/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-g7/assets/themechange-85841449.js">
+  <link rel="modulepreload" crossorigin href="/project-g7/assets/themechange-4542c9a0.js">
   <link rel="modulepreload" crossorigin href="/project-g7/assets/vendor-0cb09735.js">
-  <link rel="stylesheet" href="/project-g7/assets/themechange-379c7323.css">
+  <link rel="stylesheet" href="/project-g7/assets/themechange-d5229589.css">
 </head>
 
 <body>
@@ -27,14 +27,14 @@
   <div class="container header-container">
     <a href="./index.html" class="logo-link">
       <svg class="icon-logo" width="109" height="28">
-        <use href="/project-g7/assets/icons-3d49df0f.svg#icon-logo-bookshelf"></use>
+        <use href="/project-g7/assets/icons-a1d7b01e.svg#icon-logo-bookshelf"></use>
       </svg>
     </a>
     <nav class="nav-menu">
       <a href="./index.html" class="nav-link">Home</a>
       <a href="../shopping-list.html" class="nav-shopping">Shopping list
         <svg class="shopping-icon" width="20" height="20">
-          <use href="/project-g7/assets/icons-3d49df0f.svg#icon-uil_cart"></use>
+          <use href="/project-g7/assets/icons-a1d7b01e.svg#icon-uil_cart"></use>
         </svg>
       </a>
     </nav>
@@ -45,19 +45,19 @@
       </label>
       <button class="btn-menu hidden" type="button">
         <svg class="icon-menu" width="28" height="28">
-          <use href="/project-g7/assets/icons-3d49df0f.svg#icon-align-left"></use>
+          <use href="/project-g7/assets/icons-a1d7b01e.svg#icon-align-left"></use>
         </svg>
       </button>
       <button class="btn-close" type="button">
         <svg class="icon-close" width="28" height="28">
-          <use href="/project-g7/assets/icons-3d49df0f.svg#icon-x-close"></use>
+          <use href="/project-g7/assets/icons-a1d7b01e.svg#icon-x-close"></use>
         </svg>
       </button>
       <button class="user-btn" type="button">
         <img class="user-photo" src="#" alt="user">
         <p class="user-name">Stephan</p>
         <svg class="icon-down" width="23" height="26">
-          <use href="/project-g7/assets/icons-3d49df0f.svg#icon-fi-ss-caret-down"></use>
+          <use href="/project-g7/assets/icons-a1d7b01e.svg#icon-fi-ss-caret-down"></use>
         </svg>
       </button>
     </div>
@@ -72,13 +72,69 @@
  <a href="./index.html" class="nav">Home</a>
  <a href="./shopping-list.html" class="shopping">Shopping list
     <svg class="shop-icon" width="20" height="20">
-        <use href="/project-g7/assets/icons-3d49df0f.svg#icon-uil_cart"></use>
+        <use href="/project-g7/assets/icons-a1d7b01e.svg#icon-uil_cart"></use>
     </svg>
             </a>
         </ul>
     </nav>
 </section>
-    
+    <div class="backdrop close">
+  <div class="modal">
+    <button class="close-modal">
+      <svg class="modal-svg-close" width="24" height="24">
+        <use href="../img/icons.svg#icon-x-close"></use>
+      </svg>
+    </button>
+
+    <div class="desctop">
+      <img src="" alt="зображення обгортки книги" class="img-modal" />
+      <div class="lauch">
+        <div class="tittle-books">
+          <h2 class="boock-name">BOOCK-NAME</h2>
+          <p class="author">Author-Author</p>
+        </div>
+
+        <p class="about-book">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
+          nulla distinctio quia dolores eius suscipit repudiandae!
+        </p>
+
+        <ul class="sale-place">
+          <li>
+            <a href="" target="_blank"
+              ><img
+                class="sale-place-links"
+                src="../img/amazon.png"
+                alt="amazon"
+                width="62"
+                height="19"
+            /></a>
+          </li>
+          <li>
+            <a href="" target="_blank"
+              ><img
+                class="sale-place-links"
+                src="../img/apple.png"
+                alt="amazon"
+                width="33"
+                height="32"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="add-lokalstorage" type="button">add to shopping list</button>
+    <button class="remove-lokalstorage hiden" type="button">
+      remove from the shopping list
+    </button>
+    <p class="congrat hiden">
+      Сongratulations! You have added the book to the shopping list. To delete,
+      press the button “Remove from the shopping list”.
+    </p>
+  </div>
+</div>
+
     <section class="homepage" id="homepage">
   <div class="container navigation-category">
     <aside class="aside-menu">
