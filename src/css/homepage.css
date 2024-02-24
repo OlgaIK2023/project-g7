@@ -1,9 +1,9 @@
-.homepage{
+.homepage {
     padding-top: 40px;
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
     ::-webkit-scrollbar {
-            width: 8px;
-            background-color: transparent;
+        width: 8px;
+        background-color: transparent;
     };
     ::-webkit-scrollbar-thumb {
         height: 114px;
@@ -11,12 +11,14 @@
         border-radius: 12px;
     };
 };
+
 .navigation-category {
     display: flex;
     flex-direction: column;
     gap: 40px;
     width: 100%;
 }
+
 .category-list {
     width: 100%;
     height: 228px;
@@ -25,34 +27,40 @@
     flex-direction: column;
     overflow-y: scroll;
 }
-.category-list-item{
+
+.category-list-item {
     cursor: pointer;
 }
-.category-name{
+
+.category-name {
     color: rgba(17, 17, 17, 0.6);
     font-size: 16px;
     font-weight: 400;
-    line-height: 18px;
-    letter-spacing: -2%;
     text-align: left;
-}
-.category-name:hover, 
-.category-name:focus, 
-.category-name:active{
-    color: rgb(79, 46, 232);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: -2%;
-    text-align: left;
-    text-transform: uppercase;
     transition: 250ms all ease;
 }
-.aside-menu{
+.category-name.all {
+    color: #4f2ee8;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.category-name:hover,
+.category-name:focus,
+.category-name:active {
+    color: #4f2ee8;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.aside-menu {
     display: flex;
     gap: 40px;
     flex-direction: column;
 }
+
 .support {
     width: 335px;
     height: 446px;
@@ -60,6 +68,7 @@
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
     background: radial-gradient(190.70% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
 }
+
 .gallery {
     width: 100%;
     height: 100%;
@@ -69,25 +78,45 @@
     flex-direction: column;
     gap: 40px;
 }
+
 .gallery-list {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-.category-title{
+
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
     width: 100%;
-    font-size: 32px;
+}
+
+.category-title {
+    font-size: 29px;
     font-weight: 700;
     line-height: 38px;
     letter-spacing: -4%;
     text-align: left;
 }
-.image-wrapper{
+
+.category-title-color {
+    color: rgb(79, 46, 232);
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -4%;
+    text-align: left;
+}
+
+.image-wrapper {
     width: 180px;
     height: 256px;
-    display: block;
+    display: flex;
+    flex-direction: row;
     border-radius: 8px;
 }
+
 .book-cover {
     width: 100%;
     height: 485px;
@@ -95,6 +124,7 @@
     object-fit: cover;
     overflow: hidden;
 }
+
 .book-title {
     padding-top: 14px;
     color: rgb(17, 17, 17);
@@ -105,6 +135,7 @@
     text-align: left;
     text-transform: uppercase;
 }
+
 .book-author {
     padding-top: 4px;
     padding-bottom: 8px;
@@ -116,15 +147,20 @@
     letter-spacing: -4%;
     text-align: left;
 }
+
 .gallery-list-item {
     display: flex;
     flex-direction: row;
-    gap: 24px;   
+    gap: 24px;
 }
 .gallery-item:not(:first-child) {
     display: none;
 }
-.list-group-name{
+.gallery-list-group .gallery-item:nth-child(-n+1){
+    display: block;
+}
+
+.list-group-name {
     color: rgb(180, 175, 175);
     font-family: DM Sans;
     font-size: 14px;
@@ -135,6 +171,7 @@
     text-transform: uppercase;
     padding-bottom: 18px;
 }
+
 .see-more-btn {
     background: transparent;
     display: flex;
@@ -149,7 +186,8 @@
     border: 2px solid rgb(255, 255, 255);
     border-radius: 40px;
 }
-.see-more-btn{
+
+.see-more-btn {
     box-sizing: border-box;
     border: 2px solid rgb(79, 46, 232);
     border-radius: 40px;
@@ -164,9 +202,10 @@
     text-transform: uppercase;
     transition: 250ms all ease;
 }
-.see-more-btn:hover, 
-.see-more-btn:active, 
-.see-more-btn:focus{
+
+.see-more-btn:hover,
+.see-more-btn:active,
+.see-more-btn:focus {
     background: rgb(79, 46, 232);
     color: #E0E0E0;
 }
@@ -176,34 +215,41 @@
         flex-direction: column;
         gap: 40px;
     }
+
     .aside-menu {
         display: flex;
         gap: 40px;
         flex-direction: row;
         align-items: start;
     }
+
     .support {
         width: 335px;
         height: 472px;
     }
-    .category-list{
+
+    .category-list {
         width: 337px;
         height: 472px;
     }
-    .category-name{
+
+    .category-name {
         color: rgba(17, 17, 17, 0.6);
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         line-height: 24px;
         letter-spacing: -2%;
         text-align: left;
     }
-    .gallery{
+
+    .gallery {
         padding-top: 100px;
     }
+
     .gallery-item:nth-child(-n+3) {
         display: block;
     }
+
     .image-wrapper {
         width: 180px;
         height: 256px;
@@ -221,45 +267,50 @@
 }
 
 @media screen and (min-width:1440px) {
-    .navigation-category{
+    .navigation-category {
         display: flex;
         flex-direction: row;
         gap: 40px;
     }
+
     .category-list {
         width: 356px;
         height: 472px;
     }
+
     .category-name {
         color: rgba(17, 17, 17, 0.6);
         font-size: 18px;
         font-weight: 400;
-        line-height: 24px;
-        letter-spacing: -2%;
-        text-align: left;
     }
+
     .aside-menu {
         gap: 40px;
         flex-direction: column;
         align-items: start;
     }
+
     .support {
         width: 356px;
         height: 472px;
     }
+
     .gallery {
         padding-top: 0
     }
-    .gallery-item:nth-child(-n+100 ) {
+
+    .gallery-item:nth-child(-n+100) {
         display: block;
     }
+
     .image-wrapper {
         width: 180px;
         height: 256px;
         display: block;
         border-radius: 8px;
     }
-    .book-title{
+
+    .book-title {
         font-size: 16px;
         font-weight: 700;
         line-height: 18px;
@@ -267,6 +318,7 @@
         text-align: left;
         text-transform: uppercase;
     }
+
     .book-cover {
         width: 180px;
         height: 256px;
