@@ -4,3 +4,5 @@ import './js/themechange';
 import './js/modalwindow';
 import './js/mob-menu';
 import './js/support-ua';
+import './js/local-storage';
+import './js/shopping-list';
