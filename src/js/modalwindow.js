@@ -90,6 +90,33 @@ async function renderModalwindow(book) {
 
     addDelBtn.textContent = buttonText;
     paragraphCongrat.textContent = paragraphCongratText;
+
+    const resize = document.querySelector('.modal');
+
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      if (buttonText === 'ADD TO SHOPPING LIST') {
+        addDelBtn.style.width = '211px';
+        addDelBtn.style.left = '62px';
+        addDelBtn.style.top = '695px';
+        resize.style.height = '762px';
+      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+        addDelBtn.style.width = '279px';
+        addDelBtn.style.left = '28px';
+        addDelBtn.style.top = '676px';
+        resize.style.height = '806px';
+      }
+    }
+
+    const tablet = window.innerWidth >= 769;
+
+    if (tablet) {
+      if (buttonText === 'ADD TO SHOPPING LIST') {
+        resize.style.height = '465px';
+      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+        resize.style.height = '501px';
+      }
+    }
   }
   updateButtonAndText();
 

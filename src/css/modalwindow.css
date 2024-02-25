@@ -85,8 +85,9 @@
 
 .add-lokalstorage {
   display: flex;
+  margin-bottom: ;
   position: absolute;
-  width: 499px;
+  width: 211px;
   height: 46px;
   left: 62px;
   top: 695px;
@@ -194,6 +195,7 @@
   }
 
   .add-lokalstorage {
+    width: 499px;
     height: 64px;
     left: 40px;
     top: 361px;
