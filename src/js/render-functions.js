@@ -1,7 +1,7 @@
 import axios from "axios";
 
- export const categoryList = document.querySelector('.category-list'),
-   galleryList = document.querySelector('.gallery-list'),
+export const categoryList = document.querySelector('.category-list'),
+    galleryList = document.querySelector('.gallery-list'),
     allCategories = document.querySelector('#all-categories'),
     categoryName = document.querySelector('.category-title');
 
@@ -22,11 +22,6 @@ async function fetchBookById(bookId) {
     return response.data;
 }
 
-async function showBookById() {
-    const bookId = "643282b1e85766588626a0b2";
-    const response = await fetchBookById(bookId);
-    // console.log(response);
-}
 async function showCategoryList() {
     const response = await fetchCategories();
     renderCategory(response.data);
@@ -65,9 +60,7 @@ function renderTopCategoriesBooks(data) {
     const markup = data.map(({ _id, book_image, author, title }) => {
         return `
         <li class="gallery-item" id="${_id}">
-            <div class="ig-wrapper">
-                <img src="${book_image}" alt="" class="book-cover" />
-            </div>
+            <img src="${book_image}" alt="" class="book-cover" />
             <h3 class="book-title">${isCorrectTextLength(title)}</h3>
             <h5 class="book-author">${isCorrectTextLength(author)}</h5>
         </li>`
@@ -147,3 +140,16 @@ allCategories.addEventListener('click', showAllCategories);
 
 
 
+galleryList.addEventListener('click', async (e) => {
+    const bookId = e.target.parentNode.getAttribute('id');
+    const response = await fetchBookById(bookId);
+    showModal(response);
+    console.log(response);
+})
+
+function showModal(obj) {
+    const { _id, author, book_image, title, buy_links } = obj;
+    const amazonUrl = buy_links[0].url;
+    const appleUrl = buy_links[1].url;
+
+}
