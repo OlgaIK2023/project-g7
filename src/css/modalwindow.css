@@ -84,12 +84,14 @@
 }
 
 .add-lokalstorage {
+  display: flex;
   position: absolute;
-  width: auto;
+  width: 211px;
   height: 46px;
   left: 62px;
   top: 695px;
-  padding: 14px 28px 14px 28px;
+  align-items: center;
+  justify-content: center;
   color: rgb(17, 17, 17);
   font-size: 14px;
   font-weight: 700;
@@ -103,7 +105,7 @@
   background-color: transparent;
 }
 
-.remove-lokalstorage {
+/* .remove-lokalstorage {
   position: absolute;
   width: auto;
   height: 46px;
@@ -120,7 +122,7 @@
   letter-spacing: -1%;
   text-align: left;
   text-transform: uppercase;
-}
+} */
 
 .sale-place-links:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
@@ -144,7 +146,7 @@
   height: 36px;
   left: 47px;
   right: 46px;
-  top: 730px;
+  top: 754px;
   bottom: 40px;
   color: rgba(17, 17, 17, 0.5);
   font-family: DM Sans;
@@ -192,20 +194,20 @@
   }
 
   .add-lokalstorage {
+    width: 499px;
     height: 64px;
     left: 40px;
     top: 361px;
-    padding: 20px 173px 20px 173px;
   }
 
-  .remove-lokalstorage {
+  /* .remove-lokalstorage {
     position: absolute;
     width: 499px;
     height: 64px;
     left: 40px;
     top: 361px;
     text-align: center;
-  }
+  } */
 
   .congrat {
     position: absolute;

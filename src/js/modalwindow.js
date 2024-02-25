@@ -1,5 +1,16 @@
-export const showBoockDetails = response => {
-  renderModalwindow(response);
+import {
+  isBookAlreadyExist,
+  deleteFromLS,
+  saveToLS,
+  loadFromLS,
+} from './local-storage';
+
+import amazonIcon from '../img/amazon.png';
+import appleIcon from '../img/apple.png';
+import sprite from '../img/icons.svg';
+
+export const showBoockDetails = book => {
+  renderModalwindow(book);
 
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
@@ -9,43 +20,43 @@ export const showBoockDetails = response => {
   document.addEventListener('keydown', keydownHandler);
 };
 
-async function renderModalwindow(response) {
+async function renderModalwindow(book) {
   const markup = `<div class="backdrop">
   <div class="modal">
     <button class="close-modal">
       <svg class="modal-svg-close" width="24" height="24">
-        <use href="../img/icons.svg#icon-x-close"></use>
+        <use href="${sprite}#icon-x-close"></use>
       </svg>
     </button>
 
     <div class="desctop">
-      <img src="${response.book_image}" alt="${response.title}" class="img-modal" />
+      <img src="${book.book_image}" alt="${book.title}" class="img-modal" />
       <div class="lauch">
         <div class="tittle-books">
-          <h2 class="boock-name">${response.title}</h2>
-          <p class="author">${response.author}</p>
+          <h2 class="boock-name">${book.title}</h2>
+          <p class="author">${book.author}</p>
         </div>
 
         <p class="about-book">
-         ${response.description}
+         ${book.description}
         </p>
 
         <ul class="sale-place">
           <li>
-            <a href="${response.amazon_product_url}" target="_blank"
+            <a href="${book.amazon_product_url}" target="_blank"
               ><img
                 class="sale-place-links"
-                src="../img/amazon.png"
+                src="${amazonIcon}"
                 alt="amazon"
                 width="62"
                 height="19"
             /></a>
           </li>
           <li>
-            <a href="${response.book_uri}" target="_blank"
+            <a href="${book.book_uri}" target="_blank"
               ><img
                 class="sale-place-links"
-                src="../img/apple.png"
+                src="${appleIcon}"
                 alt="amazon"
                 width="33"
                 height="32"
@@ -55,20 +66,75 @@ async function renderModalwindow(response) {
       </div>
     </div>
 
-    <button class="add-lokalstorage" type="button">add to shopping list</button>
-    <button class="remove-lokalstorage hiden" type="button">
-      remove from the shopping list
-    </button>
-    <p class="congrat hiden">
-      Сongratulations! You have added the book to the shopping list. To delete,
-      press the button “Remove from the shopping list”.
-    </p>
+    <button class="add-lokalstorage" type="button"></button>
+    <p class="congrat"></p>
   </div>
 </div>
 `;
-
   const main = document.querySelector('main');
   main.insertAdjacentHTML('beforeend', markup);
+
+  const addDelBtn = document.querySelector('.add-lokalstorage');
+  const paragraphCongrat = document.querySelector('.congrat');
+
+  function updateButtonAndText() {
+    const isBookAlreadyAdded = isBookAlreadyExist(book._id);
+
+    const buttonText = isBookAlreadyAdded
+      ? 'REMOVE FROM THE SHOPPING LIST'
+      : 'ADD TO SHOPPING LIST';
+    const paragraphCongratText = isBookAlreadyAdded
+      ? `Congratulations! You have added the book to the shopping list. To delete,
+      press the button "Remove from the shopping list".`
+      : '';
+
+    addDelBtn.textContent = buttonText;
+    paragraphCongrat.textContent = paragraphCongratText;
+
+    const resize = document.querySelector('.modal');
+    const distance = document.querySelector('.desctop');
+
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      if (buttonText === 'ADD TO SHOPPING LIST') {
+        addDelBtn.style.width = '211px';
+        addDelBtn.style.left = '62px';
+        addDelBtn.style.top = '695px';
+        resize.style.height = '762px';
+      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+        addDelBtn.style.width = '279px';
+        addDelBtn.style.position = 'absolute';
+        addDelBtn.style.left = '28px';
+        addDelBtn.style.top = '700px';
+        resize.style.height = '806px';
+      }
+    }
+
+    const tablet = window.innerWidth >= 769;
+
+    if (tablet) {
+      if (buttonText === 'ADD TO SHOPPING LIST') {
+        resize.style.height = '465px';
+      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+        resize.style.height = '501px';
+      }
+    }
+  }
+  updateButtonAndText();
+
+  addDelBtn.addEventListener('click', e => {
+    e.preventDefault();
+    const isBookAlreadyAdded = isBookAlreadyExist(book._id);
+
+    console.log(isBookAlreadyAdded);
+
+    if (isBookAlreadyAdded) {
+      deleteFromLS(book._id);
+    } else {
+      saveToLS(book);
+    }
+    updateButtonAndText();
+  });
 }
 
 function closeModal() {

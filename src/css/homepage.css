@@ -1,22 +1,15 @@
 .homepage {
     padding-top: 40px;
-
     /* background: rgb(255, 255, 255); */
-
     ::-webkit-scrollbar {
         width: 8px;
         background-color: transparent;
     };
-
-    
     ::-webkit-scrollbar-thumb {
         height: 114px;
         background: #E0E0E0;
         border-radius: 12px;
-
     };
-
-    
 }
 
 
@@ -42,33 +35,28 @@
 }
 
 
-
-
-.category-name{
+.category-name {
     /* color: rgba(17, 17, 17, 0.6); */
-
-
     font-size: 16px;
     font-weight: 400;
     text-align: left;
     transition: 250ms all ease;
 }
 
+.active {
+    color: rgb(79, 46, 232);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+}
 
-.category-name:hover,
+/* .category-name:hover,
 .category-name:focus,
 .category-name:active {
     color: rgb(79, 46, 232);
 }
 
-.category-name.all {
-    color: #4f2ee8;
-
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 .category-name:hover,
 .category-name:focus,
 .category-name:active {
@@ -76,7 +64,7 @@
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
-}
+} */
 
 
 
@@ -265,14 +253,10 @@
         width: 337px;
         height: 472px;
     }
-
-
     
-    .category-name{
+    .category-name {
         /* color: rgba(17, 17, 17, 0.6); */
-
         font-size: 18px;
-
         font-weight: 400;
         line-height: 24px;
         letter-spacing: -2%;
@@ -319,6 +303,13 @@
         /* color: rgba(17, 17, 17, 0.6); */
         font-size: 18px;
         font-weight: 400;
+    }
+    .active {
+        color: rgb(79, 46, 232);
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
     }
 
     .aside-menu {
