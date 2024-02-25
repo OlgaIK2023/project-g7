@@ -1,4 +1,13 @@
-import { isBookAlreadyExist, deleteFromLS, saveToLS, loadFromLS } from "./local-storage";
+import {
+  isBookAlreadyExist,
+  deleteFromLS,
+  saveToLS,
+  loadFromLS,
+} from './local-storage';
+
+import amazonIcon from '../img/amazon.png';
+import appleIcon from '../img/apple.png';
+import sprite from '../img/icons.svg';
 
 export const showBoockDetails = book => {
   renderModalwindow(book);
@@ -16,7 +25,7 @@ async function renderModalwindow(book) {
   <div class="modal">
     <button class="close-modal">
       <svg class="modal-svg-close" width="24" height="24">
-        <use href="../img/icons.svg#icon-x-close"></use>
+        <use href="${sprite}#icon-x-close"></use>
       </svg>
     </button>
 
@@ -37,7 +46,7 @@ async function renderModalwindow(book) {
             <a href="${book.amazon_product_url}" target="_blank"
               ><img
                 class="sale-place-links"
-                src="../img/amazon.png"
+                src="${amazonIcon}"
                 alt="amazon"
                 width="62"
                 height="19"
@@ -47,7 +56,7 @@ async function renderModalwindow(book) {
             <a href="${book.book_uri}" target="_blank"
               ><img
                 class="sale-place-links"
-                src="../img/apple.png"
+                src="${appleIcon}"
                 alt="amazon"
                 width="33"
                 height="32"
@@ -67,33 +76,65 @@ async function renderModalwindow(book) {
 
   const addDelBtn = document.querySelector('.add-lokalstorage');
   const paragraphCongrat = document.querySelector('.congrat');
-        
-function updateButtonAndText() { 
-  const isBookAlreadyAdded = isBookAlreadyExist(book._id);
 
-  const buttonText = isBookAlreadyAdded ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST';
-  const paragraphCongratText = isBookAlreadyAdded ? `Congratulations! You have added the book to the shopping list. To delete,
-      press the button "Remove from the shopping list".` : '';
-  
-  addDelBtn.textContent = buttonText;
-  paragraphCongrat.textContent = paragraphCongratText;
-}
-updateButtonAndText();
+  function updateButtonAndText() {
+    const isBookAlreadyAdded = isBookAlreadyExist(book._id);
 
-addDelBtn.addEventListener('click', (e) => {
+    const buttonText = isBookAlreadyAdded
+      ? 'REMOVE FROM THE SHOPPING LIST'
+      : 'ADD TO SHOPPING LIST';
+    const paragraphCongratText = isBookAlreadyAdded
+      ? `Congratulations! You have added the book to the shopping list. To delete,
+      press the button "Remove from the shopping list".`
+      : '';
+
+    addDelBtn.textContent = buttonText;
+    paragraphCongrat.textContent = paragraphCongratText;
+
+    const resize = document.querySelector('.modal');
+    const distance = document.querySelector('.desctop');
+
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      if (buttonText === 'ADD TO SHOPPING LIST') {
+        addDelBtn.style.width = '211px';
+        addDelBtn.style.left = '62px';
+        addDelBtn.style.top = '695px';
+        resize.style.height = '762px';
+      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+        addDelBtn.style.width = '279px';
+        addDelBtn.style.position = 'absolute';
+        addDelBtn.style.left = '28px';
+        addDelBtn.style.top = '700px';
+        resize.style.height = '806px';
+      }
+    }
+
+    const tablet = window.innerWidth >= 769;
+
+    if (tablet) {
+      if (buttonText === 'ADD TO SHOPPING LIST') {
+        resize.style.height = '465px';
+      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+        resize.style.height = '501px';
+      }
+    }
+  }
+  updateButtonAndText();
+
+  addDelBtn.addEventListener('click', e => {
     e.preventDefault();
     const isBookAlreadyAdded = isBookAlreadyExist(book._id);
-    
+
     console.log(isBookAlreadyAdded);
 
     if (isBookAlreadyAdded) {
-        deleteFromLS(book._id);
-    } else { 
-        saveToLS(book);
+      deleteFromLS(book._id);
+    } else {
+      saveToLS(book);
     }
     updateButtonAndText();
-});
-
+  });
 }
 
 function closeModal() {
@@ -122,6 +163,3 @@ function keydownHandler(event) {
     closeModal();
   }
 }
-
-
-
