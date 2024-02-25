@@ -1,3 +1,17 @@
+/* :root {
+    --black-color-for-text: #111111;
+    --purple-color-for-text: #4f2ee8;
+    --black-color-with-60percentage: rgba(0, 0, 0, 0.6);
+    --gray-color-for-text: #b4afaf;
+
+    --purple-color-with-40percentage-for-border: rgba(79, 46, 232, 0.4);
+    --white-color-for-block: #ffffff;
+    --color-for-bg: #d0d0d0;
+
+    --yellow-color-for-pagination: #eac645;
+} */
+
+
 .title {
     margin-top: 40px;
     margin-bottom: 40px;

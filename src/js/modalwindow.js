@@ -34,7 +34,7 @@ async function renderModalwindow(response) {
           <li>
             <a href="${response.amazon_product_url}" target="_blank"
               ><img
-                class="sale-place-links"
+                class="amazon-link"
                 src="../img/amazon.png"
                 alt="amazon"
                 width="62"
@@ -44,7 +44,7 @@ async function renderModalwindow(response) {
           <li>
             <a href="${response.book_uri}" target="_blank"
               ><img
-                class="sale-place-links"
+                class="apple-link"
                 src="../img/apple.png"
                 alt="amazon"
                 width="33"

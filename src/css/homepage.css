@@ -1,6 +1,7 @@
+
 .homepage {
     padding-top: 40px;
-
+background-color: var(--main-bg-color);
     /* background: rgb(255, 255, 255); */
 
     ::-webkit-scrollbar {
@@ -45,7 +46,7 @@
 
 
 .category-name{
-    /* color: rgba(17, 17, 17, 0.6); */
+     color: var(--color-of-category-text);
 
 
     font-size: 16px;
@@ -58,26 +59,21 @@
 .category-name:hover,
 .category-name:focus,
 .category-name:active {
-    color: rgb(79, 46, 232);
+    color: var(--color-of-categoryAll-text);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 250ms all ease;
 }
 
 .category-name.all {
-    color: #4f2ee8;
+    color: var(--color-of-categoryAll-text);
 
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: 250ms all ease;
 }
-
-.category-name:hover,
-.category-name:focus,
-.category-name:active {
-    color: #4f2ee8;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 
 
 .aside-menu {
@@ -104,6 +100,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding-bottom: 60px;
 }
 
 .gallery-list {
@@ -123,6 +120,7 @@
 }
 
 .category-title {
+    color: var(--first-titles-color);
     font-size: 29px;
     font-weight: 700;
     line-height: 38px;
@@ -131,7 +129,7 @@
 }
 
 .category-title-color {
-    color: rgb(79, 46, 232);
+    color: var(--color-of-categoryAll-text);
     font-size: 29px;
     font-weight: 700;
     line-height: 38px;
@@ -157,7 +155,7 @@
 
 .book-title {
     padding-top: 14px;
-    color: rgb(17, 17, 17);
+    color: var(--first-titles-color);
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
@@ -226,7 +224,7 @@
     border-radius: 40px;
     object-fit: contain;
 
-    color: rgb(17, 17, 17);
+    color: var(--first-titles-color);
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
@@ -241,6 +239,7 @@
 .see-more-btn:focus {
     background: rgb(79, 46, 232);
     color: #E0E0E0;
+    transition: 250ms all ease;
 }
 
 @media screen and (min-width:768px) {
