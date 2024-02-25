@@ -85,7 +85,6 @@
 
 .add-lokalstorage {
   display: flex;
-  margin-bottom: ;
   position: absolute;
   width: 211px;
   height: 46px;
@@ -147,7 +146,7 @@
   height: 36px;
   left: 47px;
   right: 46px;
-  top: 730px;
+  top: 754px;
   bottom: 40px;
   color: rgba(17, 17, 17, 0.5);
   font-family: DM Sans;

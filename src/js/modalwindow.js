@@ -92,6 +92,7 @@ async function renderModalwindow(book) {
     paragraphCongrat.textContent = paragraphCongratText;
 
     const resize = document.querySelector('.modal');
+    const distance = document.querySelector('.desctop');
 
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
@@ -102,8 +103,9 @@ async function renderModalwindow(book) {
         resize.style.height = '762px';
       } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
         addDelBtn.style.width = '279px';
+        addDelBtn.style.position = 'absolute';
         addDelBtn.style.left = '28px';
-        addDelBtn.style.top = '676px';
+        addDelBtn.style.top = '700px';
         resize.style.height = '806px';
       }
     }
