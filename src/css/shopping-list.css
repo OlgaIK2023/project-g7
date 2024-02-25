@@ -215,17 +215,19 @@ display: -webkit-box;
         margin-left: 660px;
 
     }
+
+        .shoping-support {
+            padding-top: 40px;
+            padding-left: 24px;
+            display: block;
+        }
   }
 
 
-/* support */
+
  
-.shoping-support {
-    padding-top: 40px;
-    padding-left: 24px;
-    display: block; 
-}
- 
+
+
 
 
 
