@@ -41,34 +41,28 @@
     cursor: pointer;
 }
 
-
-
-
 .category-name{
-    /* color: rgba(17, 17, 17, 0.6); */
-
-
     font-size: 16px;
     font-weight: 400;
     text-align: left;
     transition: 250ms all ease;
+    /* color: rgba(17, 17, 17, 0.6); */
 }
 
+.active{
+    color: rgb(79, 46, 232);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+}
 
-.category-name:hover,
+/* .category-name:hover,
 .category-name:focus,
 .category-name:active {
     color: rgb(79, 46, 232);
 }
 
-.category-name.all {
-    color: #4f2ee8;
-
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 .category-name:hover,
 .category-name:focus,
 .category-name:active {
@@ -76,7 +70,7 @@
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
-}
+} */
 
 
 

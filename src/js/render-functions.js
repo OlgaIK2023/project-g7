@@ -25,13 +25,23 @@ async function fetchBookById(bookId) {
 async function showCategoryList() {
     const response = await fetchCategories();
     renderCategory(response.data);
+    allCategories.classList.toggle('active');
 }
 
-async function showAllCategories() {
-    const response = await fetchTopCategories();
+//додаємо обробники подій
+categoryList.addEventListener('click', renderPageByCategory);
+allCategories.addEventListener('click', showAllCategories);
 
-    for (let i = 0; i < 4; i++) {
-        renderListGroup(response.data[i]);
+async function showAllCategories() {
+    document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+    try {
+        const response = await fetchTopCategories();
+        for (let i = 0; i < 4; i++) {
+            renderListGroup(response.data[i]);
+        }
+        document.querySelector('.category-list-item').classList.add('active'); //highlight all categories category item
+    } catch (error) {
+        console.error("Failed to fetch top categories:", error);
     }
 
     // const seeMoreBtn = document.querySelectorAll('.see-more-btn');
@@ -42,7 +52,6 @@ async function showAllCategories() {
     //     })
     // })
 }
-allCategories.classList.add('all');
 
 showAllCategories();
 showCategoryList();
@@ -69,7 +78,6 @@ function renderTopCategoriesBooks(data) {
 }
 
 function renderListGroup(data) {
-    allCategories.classList.add('all');
     const categoryTitle = 'Best Sellers Books';
     renderCategoryTitleByColors(categoryTitle);
 
@@ -111,11 +119,13 @@ async function renderPageByCategory(e) {
         if (response.data.length != 0) {
             galleryList.style.cssText = 'flex-direction: row; flex-wrap: wrap';
             renderListByCategory(response.data);
+            document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
         } else {
             showAllCategories();
         }
+        e.target.parentNode.classList.add('active')
     } catch (error) {
-        console.log(error);
+        console.error("Failed to render page by category:", error);
     }
 }
 
@@ -132,24 +142,4 @@ function renderCategoryTitleByColors(categoryTitle) {
 
     categoryName.textContent = `${blackWords}`;
     categoryName.nextElementSibling.textContent = `${blueWord}`;
-}
-
-//додаємо обробники подій
-categoryList.addEventListener('click', renderPageByCategory);
-allCategories.addEventListener('click', showAllCategories);
-
-
-
-galleryList.addEventListener('click', async (e) => {
-    const bookId = e.target.parentNode.getAttribute('id');
-    const response = await fetchBookById(bookId);
-    showModal(response);
-    console.log(response);
-})
-
-function showModal(obj) {
-    const { _id, author, book_image, title, buy_links } = obj;
-    const amazonUrl = buy_links[0].url;
-    const appleUrl = buy_links[1].url;
-
 }
