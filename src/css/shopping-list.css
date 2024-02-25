@@ -1,3 +1,14 @@
+.shoping-support {
+    display: none;
+}
+
+.shoping-list {
+    display: flex;
+    gap: 40px;
+}
+
+
+
 .title {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -104,10 +115,7 @@
   }
 
   .trash {
-      fill: #ffffff;
-    
-        
-        
+      fill: #ffffff;      
   }
 
   .book-app {
@@ -115,8 +123,8 @@
         align-items: center;
         padding-top: 20px;
         gap: 8px;
-
   }
+
 .amazon {filter: grayscale(100%);
     width: 32px;
     height: 11px;
@@ -208,3 +216,17 @@ display: -webkit-box;
 
     }
   }
+
+
+/* support */
+ 
+.shoping-support {
+    padding-top: 40px;
+    padding-left: 24px;
+    display: block; 
+}
+ 
+
+
+
+  

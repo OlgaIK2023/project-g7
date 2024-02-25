@@ -9,51 +9,90 @@
     <title>Shopping list</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
-  <link rel="stylesheet" href="./css/styles.css" />
-    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+
 </head>
 
 
 <load src="./partials/header.html" />
 
+
 <body>
     <div class="container">
-        <h1 class="title"> <span class="main-name">Shopping</span> <span class="main-name-list">List</span> </h1>
-        <ul>
-            <li class="one-book">
-                <img class="img-book" src="./img/shoppingList/Rectangle 13-min.jpg" alt="Book">
-                <div class="discription">
-                    <div class="up-part">
-                        <h2 class="book-name">I will find you</h2>
-
-                        <a class="basket" href="" target="_blank" rel="noopener noreferrer"> <svg class="trash"
-                                width="16" height="16">
-                                <use href="./img/shoppingList/Icon-2.svg#icon-trash-03"></use>
-                            </svg></a>
+        <div class="shoping-list">
+            <!-- copy from homepage -->
+            <div class="shoping-support">
+                <aside class="support-box">
+                    <h3 class="support-title">
+                        Support Ukraine
+                        <svg class="support-svg" width="20px" height="32px">
+                            <use href="./img/icons.svg#icon-Vector"></use>
+                        </svg>
+                    </h3>
+                    <div class="slider-container">
+                        <ul class="support-list js-support"></ul>
                     </div>
-                    <h3 class="type-name">Hardcover fiction</h3>
-                    <p class="text-discription">David Burroughs was once a devoted father to his three-year-old son
-                        Matthew, living a dream life just a short drive away from the working-class suburb where he and
-                        his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to
-                        discover Matthew had been murdered while David was asleep just down the hall.</p>
 
-
-
-                    <div class="book-app">
-                        <h3 class="name-author">Harlan Coben</h3>
-                        <img class="amazon" src="./img/amazon.png" alt="amazon">
-                        <img class="apple" src="./img/apple.png" alt="apple">
+                    <div class="button-support slider-button">
+                        <button class="support-button">
+                            <svg class="support-button-svg">
+                                <use href="./img/icons.svg#icon-arrowDown"></use>
+                            </svg>
+                        </button>
                     </div>
-                </div>
-            </li>
-            <li class="one-book"></li>
-        </ul>
+                </aside>
+                </aside>
+            </div>
+            <!--  -->
+            <div>
+                <h1 class="title"> <span class="main-name">Shopping</span> <span class="main-name-list">List</span>
+                </h1>
+
+                <ul>
+                    <li class="one-book">
+                        <img class="img-book" src="./img/shoppingList/Rectangle 13-min.jpg" alt="Book">
+                        <div class="discription">
+                            <div class="up-part">
+                                <h2 class="book-name">I will find you</h2>
+
+                                <a class="basket" href="" target="_blank" rel="noopener noreferrer"> <svg class="trash"
+                                        width="16" height="16">
+                                        <use href="./img/shoppingList/Icon-2.svg#icon-trash-03"></use>
+                                    </svg></a>
+                            </div>
+                            <h3 class="type-name">Hardcover fiction</h3>
+                            <p class="text-discription">David Burroughs was once a devoted father to his three-year-old
+                                son
+                                Matthew, living a dream life just a short drive away from the working-class suburb where
+                                he
+                                and
+                                his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly
+                                to
+                                discover Matthew had been murdered while David was asleep just down the hall.</p>
+
+
+
+                            <div class="book-app">
+                                <h3 class="name-author">Harlan Coben</h3>
+                                <img class="amazon" src="./img/amazon.png" alt="amazon">
+                                <img class="apple" src="./img/apple.png" alt="apple">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="one-book"></li>
+                </ul>
+
+
+
+            </div>
+        </div>
     </div>
 
     <script type="module" src="./js/themechange.js"></script>
