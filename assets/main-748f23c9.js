@@ -58,4 +58,4 @@ import{a as c}from"./vendor-0cb09735.js";(function(){const t=document.createElem
                 </div>
             </div>
             </li>`).join("");f.innerHTML=e.length>0?o:t,document.querySelectorAll(".shopping-list .basket").forEach(s=>{const r=s.getAttribute("data-id");s.addEventListener("click",()=>{$(r);const i=w();M(i)})})}M(Ce);
-//# sourceMappingURL=main-e054b73f.js.map
+//# sourceMappingURL=main-748f23c9.js.map
