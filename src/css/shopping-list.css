@@ -1,27 +1,19 @@
-/* :root {
-    --black-color-for-text: #111111;
-    --purple-color-for-text: #4f2ee8;
-    --black-color-with-60percentage: rgba(0, 0, 0, 0.6);
-    --gray-color-for-text: #b4afaf;
 
-    --purple-color-with-40percentage-for-border: rgba(79, 46, 232, 0.4);
-    --white-color-for-block: #ffffff;
-    --color-for-bg: #d0d0d0;
-
-    --yellow-color-for-pagination: #eac645;
-} */
+body{
+    background-color: var(--main-bg-color);
+}
 
 
 .title {
     margin-top: 40px;
     margin-bottom: 40px;
-    
+    color:var(--first-text-color);
 }
 
 /* .discription {} */
 
 .main-name-list {
-    color: #4F2EE8;
+    color: var(--color-of-categoryAll-text);
 }
 
 /* .main-name {} */
@@ -35,6 +27,7 @@
     display: flex;
     justify-content: space-between;
      margin-top: 20px; 
+    background-color: var(--header-bg-color);
 }
 
 .book-name {
@@ -44,7 +37,7 @@
     line-height: 1.12;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--first-text-color);
     padding-bottom: 4px;
 }
 .up-part {
@@ -69,7 +62,7 @@
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.04em;
-    color: #111;
+    color: var(--first-text-color);
     width: 193px;
     height: 56px;
         overflow: hidden;
