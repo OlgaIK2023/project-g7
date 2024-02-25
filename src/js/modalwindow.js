@@ -1,5 +1,7 @@
-export const showBoockDetails = response => {
-  renderModalwindow(response);
+import { isBookAlreadyExist, deleteFromLS, saveToLS, loadFromLS } from "./local-storage";
+
+export const showBoockDetails = book => {
+  renderModalwindow(book);
 
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
@@ -9,7 +11,7 @@ export const showBoockDetails = response => {
   document.addEventListener('keydown', keydownHandler);
 };
 
-async function renderModalwindow(response) {
+async function renderModalwindow(book) {
   const markup = `<div class="backdrop">
   <div class="modal">
     <button class="close-modal">
@@ -19,20 +21,20 @@ async function renderModalwindow(response) {
     </button>
 
     <div class="desctop">
-      <img src="${response.book_image}" alt="${response.title}" class="img-modal" />
+      <img src="${book.book_image}" alt="${book.title}" class="img-modal" />
       <div class="lauch">
         <div class="tittle-books">
-          <h2 class="boock-name">${response.title}</h2>
-          <p class="author">${response.author}</p>
+          <h2 class="boock-name">${book.title}</h2>
+          <p class="author">${book.author}</p>
         </div>
 
         <p class="about-book">
-         ${response.description}
+         ${book.description}
         </p>
 
         <ul class="sale-place">
           <li>
-            <a href="${response.amazon_product_url}" target="_blank"
+            <a href="${book.amazon_product_url}" target="_blank"
               ><img
                 class="sale-place-links"
                 src="../img/amazon.png"
@@ -42,7 +44,7 @@ async function renderModalwindow(response) {
             /></a>
           </li>
           <li>
-            <a href="${response.book_uri}" target="_blank"
+            <a href="${book.book_uri}" target="_blank"
               ><img
                 class="sale-place-links"
                 src="../img/apple.png"
@@ -55,10 +57,7 @@ async function renderModalwindow(response) {
       </div>
     </div>
 
-    <button class="add-lokalstorage" type="button">add to shopping list</button>
-    <button class="remove-lokalstorage hiden" type="button">
-      remove from the shopping list
-    </button>
+    <button class="add-lokalstorage" type="button"></button>
     <p class="congrat hiden">
       Сongratulations! You have added the book to the shopping list. To delete,
       press the button “Remove from the shopping list”.
@@ -66,9 +65,33 @@ async function renderModalwindow(response) {
   </div>
 </div>
 `;
-
   const main = document.querySelector('main');
   main.insertAdjacentHTML('beforeend', markup);
+
+  const addDelBtn = document.querySelector('.add-lokalstorage');
+        
+function setButtonText() { 
+  const isBookAlreadyAdded = isBookAlreadyExist(book._id);
+
+    const buttonText = isBookAlreadyAdded ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST';
+    addDelBtn.textContent = buttonText;
+}
+setButtonText();
+
+addDelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isBookAlreadyAdded = isBookAlreadyExist(book._id);
+    
+    console.log(isBookAlreadyAdded);
+
+    if (isBookAlreadyAdded) {
+        deleteFromLS(book._id);
+    } else { 
+        saveToLS(book);
+    }
+    setButtonText();
+});
+
 }
 
 function closeModal() {
@@ -97,3 +120,6 @@ function keydownHandler(event) {
     closeModal();
   }
 }
+
+
+
