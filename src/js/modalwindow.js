@@ -58,10 +58,7 @@ async function renderModalwindow(book) {
     </div>
 
     <button class="add-lokalstorage" type="button"></button>
-    <p class="congrat hiden">
-      Сongratulations! You have added the book to the shopping list. To delete,
-      press the button “Remove from the shopping list”.
-    </p>
+    <p class="congrat"></p>
   </div>
 </div>
 `;
@@ -69,14 +66,19 @@ async function renderModalwindow(book) {
   main.insertAdjacentHTML('beforeend', markup);
 
   const addDelBtn = document.querySelector('.add-lokalstorage');
+  const paragraphCongrat = document.querySelector('.congrat');
         
-function setButtonText() { 
+function updateButtonAndText() { 
   const isBookAlreadyAdded = isBookAlreadyExist(book._id);
 
-    const buttonText = isBookAlreadyAdded ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST';
-    addDelBtn.textContent = buttonText;
+  const buttonText = isBookAlreadyAdded ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST';
+  const paragraphCongratText = isBookAlreadyAdded ? `Congratulations! You have added the book to the shopping list. To delete,
+      press the button "Remove from the shopping list".` : '';
+  
+  addDelBtn.textContent = buttonText;
+  paragraphCongrat.textContent = paragraphCongratText;
 }
-setButtonText();
+updateButtonAndText();
 
 addDelBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -89,7 +91,7 @@ addDelBtn.addEventListener('click', (e) => {
     } else { 
         saveToLS(book);
     }
-    setButtonText();
+    updateButtonAndText();
 });
 
 }

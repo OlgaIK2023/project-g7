@@ -5,7 +5,12 @@ const books = loadFromLS();
 
 function renderShopList(data) {
     shoppingList.innerHTML = '';
-    const defaultMarkup = '';
+    const defaultMarkup = `<p>This page is empty, add some books and proceed to order.</p>
+        <img
+        class="no-book"
+        src="../img/IMG_9606 1.png"
+        alt="Book"
+        />`
     const markup = data
         .map(({ book_image, title, author, _id, description, list_name, amazon_product_url, book_uri }) => {
         return `<li class="one-book">
@@ -39,7 +44,7 @@ function renderShopList(data) {
         })
             .join('');
     
-    shoppingList.innerHTML = markup;
+    shoppingList.innerHTML = data.length > 0 ? markup : defaultMarkup;
     
     const booksItems = document.querySelectorAll('.shopping-list .basket');
 
