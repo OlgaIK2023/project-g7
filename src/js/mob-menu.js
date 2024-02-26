@@ -1,8 +1,8 @@
 const buttonClose = document.querySelector('.btn-close');
 const buttonMenu = document.querySelector('.btn-menu');
-buttonMenu.addEventListener('click', openModalMenu);
 const modalMenu = document.querySelector('.menu-section');
 
+buttonMenu.addEventListener('click', openModalMenu);
 buttonClose.addEventListener('click', closeModalMenu);
 function closeModalMenu(){
     modalMenu.classList.remove('is-open');
@@ -18,3 +18,22 @@ function openModalMenu() {
     buttonClose.classList.remove('hidden');
 }
 
+
+
+// const homePage=
+
+// if (currentPage===) {
+    
+// } else {
+    
+// }
+
+
+//  document.querySelector('.home-page').addEventListener('click', function() {
+//             this.classList.add('current');
+//         });
+
+// document.querySelector('shopping-list-page').addEventListener('click', function () {
+//     this.classList.add('current');
+
+// });

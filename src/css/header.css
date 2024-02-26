@@ -29,30 +29,8 @@
 
 .nav-link {
   display: block;
-  background-color: #eac645;
   border-radius: 36px;
-  padding: 8px 16px;
   width: 72px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: #111;
-}
-
-/* .nav-link:hover,
-.nav-link:focus,
-.nav-link:active{
-  background-color: #eac645; 
-  color: #111;
-} */
-
-.nav-shopping {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
@@ -60,10 +38,42 @@
   color: var(--header-text-color);
 }
 
+
+
+.nav-shopping {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--header-text-color);
+
+}
+
+ 
+
+.current{
+  background-color: #eac645;
+  color: #111;
+  padding: 8px 16px;
+  border-radius: 36px;
+  font-weight: 700;
+  
+
+}
+.current>.shopping-icon{
+  stroke: #111;
+  fill: #111;}
+
+
+
 .shopping-icon {
   stroke: var(--header-text-color);
   fill: var(--header-text-color);
 }
+
 
 .theme-container {
   display: flex;
