@@ -1,3 +1,15 @@
+
+
+body{
+    background-color: var(--main-bg-color);
+}
+
+
+.title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  color:var(--first-text-color);}
+
 .shoping-support {
     display: none;
 }
@@ -9,40 +21,44 @@
 
 
 
-.title {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+
 
 /* .discription {} */
 
 .main-name-list {
-  color: #4f2ee8;
+
+    color: var(--color-of-categoryAll-text);
+
+  
 }
 
 /* .main-name {} */
 
 .one-book {
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
-  padding: 14px 14px;
-  width: 335px;
-  height: 170px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    padding: 14px 14px;
+    width: 335px;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+     margin-top: 20px; 
+    background-color: var(--header-bg-color);
 }
 
 .book-name {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: var(--black);
-  padding-bottom: 4px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--first-text-color);
+    padding-bottom: 4px;
+
 }
+
 .up-part {
   display: flex;
   align-items: center;
@@ -58,19 +74,22 @@
 }
 
 .text-discription {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-  color: #111;
-  width: 193px;
-  height: 56px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+
+    
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    color: var(--first-text-color);
+    width: 193px;
+    height: 56px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        
 }
 
 .name-author {

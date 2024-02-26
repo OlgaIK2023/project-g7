@@ -3,8 +3,8 @@ body{
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    color: #111111;
-    background-color: #F6F6F6;
+    /* color: #111111;
+    background-color: #F6F6F6; */
     }
     
     .container {
@@ -39,3 +39,4 @@ body{
             padding-right: 0px;
         }
     }
+
