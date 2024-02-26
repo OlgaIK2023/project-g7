@@ -5,9 +5,19 @@ import {
   loadFromLS,
 } from './local-storage';
 
+import BookAPI from './api';
+
 import amazonIcon from '../img/amazon.png';
 import appleIcon from '../img/apple.png';
 import sprite from '../img/icons.svg';
+
+const bookAPI = new BookAPI();
+
+document.querySelector('.gallery-list').addEventListener('click', async e => {
+  const bookId = e.target.parentNode.getAttribute('id');
+  const book = await bookAPI.fetchBookById(bookId);
+  renderModalwindow(book);
+});
 
 export const showBoockDetails = book => {
   renderModalwindow(book);
