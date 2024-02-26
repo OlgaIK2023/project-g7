@@ -3,8 +3,6 @@
     position:fixed;
     top:0;
     right: 0;
-    visibility: visible;
-    opacity: 0;
     padding-top: 184px;
     min-width: 100%;
     min-height: 812px;
@@ -35,7 +33,7 @@
     margin: 0 auto; 
 }
 
-.nav{
+.home-page{
     display: block;
     background-color: #eac645;
     border-radius: 36px;
@@ -49,7 +47,7 @@
     color: #111;
 }
 
-.shopping {
+.shopping-list-page {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -60,6 +58,22 @@
     text-transform: uppercase;
     color: #fff;
 }
+
+
+.home-page:hover,
+.home-page:active,
+.home-page:focus{
+background-color: #eac645;
+}
+
+/* .shopping-list-page:hover,
+.shopping-list-page:active,
+.shopping-list-page:focus {
+    padding: 8px 16px;
+    background-color: #eac645;
+    border-radius: 36px;
+} */
+
 .shop-icon {
     fill:#fff;
     stroke: #fff;

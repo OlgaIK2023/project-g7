@@ -5,11 +5,17 @@ import {
   loadFromLS,
 } from './local-storage';
 
+import BookAPI from './api';
+
 import amazonIcon from '../img/amazon.png';
 import appleIcon from '../img/apple.png';
 import sprite from '../img/icons.svg';
 
-export const showBoockDetails = book => {
+const bookAPI = new BookAPI();
+
+document.querySelector('.gallery-list').addEventListener('click', async e => {
+  const bookId = e.target.parentNode.getAttribute('id');
+  const book = await bookAPI.fetchBookById(bookId);
   renderModalwindow(book);
 
   const modal = document.querySelector('.backdrop');
@@ -18,7 +24,18 @@ export const showBoockDetails = book => {
   closeModalWindow.addEventListener('click', closeModal);
   modal.addEventListener('click', modalClickHandler);
   document.addEventListener('keydown', keydownHandler);
-};
+});
+
+// export const showBoockDetails = book => {
+//   renderModalwindow(book);
+
+//   const modal = document.querySelector('.backdrop');
+//   const closeModalWindow = document.querySelector('.close-modal');
+
+//   closeModalWindow.addEventListener('click', closeModal);
+//   modal.addEventListener('click', modalClickHandler);
+//   document.addEventListener('keydown', keydownHandler);
+// };
 
 async function renderModalwindow(book) {
   const markup = `<div class="backdrop">
@@ -45,8 +62,13 @@ async function renderModalwindow(book) {
           <li>
             <a href="${book.amazon_product_url}" target="_blank"
               ><img
-                class="sale-place-links"
+
+                class="amazon-link"
+                src="../img/amazon.png"
+
+                
                 src="${amazonIcon}"
+
                 alt="amazon"
                 width="62"
                 height="19"
@@ -55,8 +77,13 @@ async function renderModalwindow(book) {
           <li>
             <a href="${book.book_uri}" target="_blank"
               ><img
-                class="sale-place-links"
+
+                class="apple-link"
+                src="../img/apple.png"
+
+                
                 src="${appleIcon}"
+
                 alt="amazon"
                 width="33"
                 height="32"

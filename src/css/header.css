@@ -1,7 +1,8 @@
+
 .header {
   position: relative;
-  background-color: #FFFFFF;
-  border: 1.50px solid #111;
+  background-color: var(--header-bg-color);
+  border: 1.50px solid var(--header-border-color);
   border-radius: 0 0 8px 8px;
   z-index: 2;
 }
@@ -16,6 +17,7 @@
 
 .logo-link {
   height: 28px;
+  fill:var(--header-text-color);
 }
 
 .nav-menu {
@@ -27,34 +29,51 @@
 
 .nav-link {
   display: block;
-  background-color: #eac645;
   border-radius: 36px;
-  padding: 8px 16px;
   width: 72px;
-  font-weight: 700;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111;
+  color: var(--header-text-color);
 }
+
+
 
 .nav-shopping {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111;
+  color: var(--header-text-color);
+
 }
 
-.shopping-icon {
-  stroke: #111;
-  fill: #111;
+ 
+
+.current{
+  background-color: #eac645;
+  color: #111;
+  padding: 8px 16px;
+  border-radius: 36px;
+  font-weight: 700;
+  
+
 }
+.current>.shopping-icon{
+  stroke: #111;
+  fill: #111;}
+
+
+
+.shopping-icon {
+  stroke: var(--header-text-color);
+  fill: var(--header-text-color);
+}
+
 
 .theme-container {
   display: flex;
@@ -117,7 +136,8 @@
 }
 
 .icon-menu {
-  stroke: #111;
+  stroke: var(--header-text-color);
+  
 }
 
 .btn-close {
@@ -130,7 +150,7 @@
 }
 
 .icon-close {
-  stroke: #111;
+  stroke: var(--header-text-color);
 }
 
 .btn-close:hover .icon-close {
@@ -208,10 +228,10 @@
   }
 }
 
-/* Dark theme */
+/* Dark theme
 
 .dark-mode-header {
-  /* color: #fff; */
+   color: #fff; 
   background-color: #111111;
   border: 1.50px solid #fff;
   transition: 0.4s;
@@ -232,5 +252,4 @@
 
 .dark-color-list{
   color:rgba(17, 17, 17, 0.6);
-}
-/* ---------- */
+} */

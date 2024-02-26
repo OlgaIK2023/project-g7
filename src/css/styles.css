@@ -15,18 +15,70 @@
 @import url('./support-ua.css');
 
 
-/* :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+:root {
+  --main-bg-color: #F6F6F6;
+  --header-bg-color: #ffffff;
+  --header-border-color: #111111;
+  --header-text-color: #111111;
+  --main-bg-color-modal: #ffffff;
+  --header-logo-color: #000000;
+  --first-titles-color: #111111;
+  /* --second-titles-color: #4f2ee8;
+  --first-text-color: #000000;
+  --first-button-color: #ffffff;
+  --second-button-color: #4f2ee8;
+  --border-button-color: #111111;
+  --text-button-color1: #111111;
+  --text-button-color2: #ffffff;
+  --menu-text-color1: #111111;
+  --link-color1: #111111; */
+ 
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  --color-of-categoryAll-text: #4f2ee8;
+  --color-of-category-text: rgba(17, 17, 17, 0.6);
+  /* --color-of-h2-category: #111111;
+  --color-for-btn-auth-modal-text: #F3F3F3;
+  --color-for-btn-auth-modal: #111111;
+  --icon-close: #111111;
+  --color-btn-uo-in: rgba(17, 17, 17, 0.5);
+  --color-btn-profile: #4F2EE8;
+  --color-email-password: #111111;
+  --color-suooort-ua: #4F2EE8;
+  --color-suooort-ua-white: #FFFFFF;
+  --text-color-add-remove: rgba(17, 17, 17, 0.5); */
+  --color-amazon: grayscale(100%);
+  --color-hover:drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+  --color-apple: grayscale(100%);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-} */
+:root[theme='dark'],
+:root:not([theme]) {
+  --main-bg-color: #202024;
+  --header-bg-color: #111111;
+  --header-border-color: #ffffff;
+  --header-text-color: #ffffff;
+  --main-bg-color-modal: #202024;
+  --header-logo-color: #ffffff;
+  --first-titles-color: #ffffff;
+  --second-titles-color: #4f2ee8;
+  --first-text-color: #ffffff;
+  --link-color1: #ffffff;
+  --header-burger-icon: url('../img/burger-icon-dark.svg');
+  --header-close-icon: url('../img/close-icon-dark.svg');
+  --color-of-categoryAll-text: #eac645;
+  --color-of-category-text: rgba(255, 255, 255, 0.6);
+  /* --color-of-h2-category: #ffffff;
+  --color-for-btn-auth-modal-text: #111111;
+  --color-for-btn-auth-modal: #F3F3F3;
+  --text-color-book-h3: #B4AFAF;
+  --icon-close: #F6F6F6;
+  --color-btn-uo-in: rgba(246, 246, 246, 0.5);
+  --color-btn-profile: #4F2EE8;
+  --color-email-password: #F6F6F6;
+  --color-suooort-ua: #4e34c8;
+  --color-suooort-ua-white: #5f5555;
+  --text-color-add-remove: rgba(255, 255, 255, 0.5); */
+  --color-amazon:brightness(0) invert(1);
+  --color-hover:drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  --color-apple:grayscale(100%);
+};
