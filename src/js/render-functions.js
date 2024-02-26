@@ -11,11 +11,13 @@ async function showCategoryList() {
   try {
     const response = await bookAPI.fetchCategories();
     renderCategory(response);
-    allCategories.classList.toggle('active');
+    allCategories.classList.add('active');
   } catch (error) {
     console.log("Failed to render show category list:", error);
   }
 }
+
+showCategoryList();
 
 async function showAllCategories() {
   document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
@@ -36,7 +38,6 @@ async function showAllCategories() {
 }
 
 showAllCategories();
-showCategoryList();
 
 function renderCategory(data) {
   const markup = data.map(({ list_name }) => {
@@ -48,7 +49,7 @@ function renderCategory(data) {
   categoryList.innerHTML += markup;
 }
 
-function renderTopCategoriesBooks(data) {
+function renderBooks(data) {
   const markup = data.map(({ _id, book_image, author, title }) => {
     return `
         <li class="gallery-item" id="${_id}">
@@ -69,36 +70,27 @@ function renderListGroup(data) {
     <li class="gallery-list-group">
       <h3 class="list-group-name">${list_name}</h3>
         <ul class="gallery-list-item">
-          ${renderTopCategoriesBooks(books)}
+          ${renderBooks(books)}
         </ul>
       <button class="see-more-btn">See more</button>
-    </li>
-  `;
+    </li>`;
   galleryList.innerHTML += markup;
 }
 
 function renderListByCategory(data) {
   const categoryTitle = data[0].list_name; //беремо назву категорії у першого елемента
   renderCategoryTitleByColors(categoryTitle);
-  const markup = data.map(({ _id, book_image, title, author }) => {
-    return `
-        <li class="gallery-item" id="${_id}">
-          <img src="${book_image}" alt="${title}" class="book-cover" />
-          <h3 class="book-title">${isCorrectTextLength(title)}</h3>
-          <h5 class="book-author">${isCorrectTextLength(author)}</h5>
-        </li>`
-  }).join('');
+  const markup = renderBooks(data);
   galleryList.innerHTML = markup;
 }
 
 async function renderPageByCategory(e) {
-  // if (e.target === e.currentTarget) return;
   const categoryName = e.target.closest('li').children[0].textContent;
 
   try {
     const response = await bookAPI.fetchBooksByCategory(categoryName);
-
     galleryList.innerHTML = '';
+
     if (response.length != 0) {
       galleryList.style.cssText = 'flex-direction: row; flex-wrap: wrap';
       renderListByCategory(response);
@@ -106,7 +98,7 @@ async function renderPageByCategory(e) {
     } else {
       showAllCategories();
     }
-    e.target.closest('li').classList.add('active')
+    e.target.closest('li').classList.add('active'); //highlight category name
   } catch (error) {
     console.error("Failed to render page by category:", error);
   }
