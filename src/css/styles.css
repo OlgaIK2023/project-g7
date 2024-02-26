@@ -13,6 +13,7 @@
 @import url('./shopping-list.css');
 @import url('./modalwindow.css');
 @import url('./support-ua.css');
+@import url('./scroll-up.css');
 
 
 :root {
@@ -32,7 +33,7 @@
   --text-button-color2: #ffffff;
   --menu-text-color1: #111111;
   --link-color1: #111111; */
- 
+
 
   --color-of-categoryAll-text: #4f2ee8;
   --color-of-category-text: rgba(17, 17, 17, 0.6);
@@ -47,7 +48,7 @@
   --color-suooort-ua-white: #FFFFFF;
   --text-color-add-remove: rgba(17, 17, 17, 0.5); */
   --color-amazon: grayscale(100%);
-  --color-hover:drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+  --color-hover: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
   --color-apple: grayscale(100%);
 }
 
@@ -78,7 +79,9 @@
   --color-suooort-ua: #4e34c8;
   --color-suooort-ua-white: #5f5555;
   --text-color-add-remove: rgba(255, 255, 255, 0.5); */
-  --color-amazon:brightness(0) invert(1);
-  --color-hover:drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-  --color-apple:grayscale(100%);
-};
+  --color-amazon: brightness(0) invert(1);
+  --color-hover: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  --color-apple: grayscale(100%);
+}
+
+;
