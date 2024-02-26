@@ -1,96 +1,72 @@
-import axios from 'axios';
-import { showBoockDetails } from './modalwindow';
+import BookAPI from "./api";
 
+export const categoryList = document.querySelector('.category-list'),
+  galleryList = document.querySelector('.gallery-list'),
+  allCategories = document.querySelector('#all-categories'),
+  categoryName = document.querySelector('.category-title');
 
- export const categoryList = document.querySelector('.category-list'),
-   galleryList = document.querySelector('.gallery-list'),
-    allCategories = document.querySelector('#all-categories'),
-    categoryName = document.querySelector('.category-title');
+const bookAPI = new BookAPI();
 
-
-async function fetchCategories() {
-  const response = await axios.get(
-    `https://books-backend.p.goit.global/books/category-list`
-  );
-  return response;
-}
-async function fetchTopCategories() {
-  const response = await axios.get(
-    'https://books-backend.p.goit.global/books/top-books'
-  );
-  return response;
-}
-async function fetchBooksByCategory(selectedCategory) {
-  const response = await axios.get(
-    `https://books-backend.p.goit.global/books/category?category=${selectedCategory}`
-  );
-  return response;
-}
-export const fetchBookById = async bookId => {
-  const response = await axios.get(
-    `https://books-backend.p.goit.global/books/${bookId}`
-  );
-  return response.data;
-};
-
-export const showBookById = async e => {
-  let id = e.target.closest('.gallery-item').id;
-
-  const response = await fetchBookById(id);
-};
-
-export const showCategoryList = async () => {
-  const response = await fetchCategories();
-  renderCategory(response.data);
-};
-
-export const showAllCategories = async () => {
-  const response = await fetchTopCategories();
-  for (let i = 0; i < 4; i++) {
-    renderListGroup(response.data[i]);
+async function showCategoryList() {
+  try {
+    const response = await bookAPI.fetchCategories();
+    renderCategory(response);
+    allCategories.classList.toggle('active');
+  } catch (error) {
+    console.log("Failed to render show category list:", error);
   }
-};
+}
 
-// const seeMoreBtn = document.querySelectorAll('.see-more-btn');
-// seeMoreBtn.forEach(button => {
-//     button.addEventListener('click', (e) => {
-//         console.log(e.target.parentNode.firstChild);
-//         console.log('asasas');
-//     })
-// })
+async function showAllCategories() {
+  document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+  try {
+    const response = await bookAPI.fetchTopCategories();
+    for (let i = 0; i < 4; i++) {
+      renderListGroup(response[i]);
+    }
+    const highlightCategory = document.querySelector('.category-list-item');
+    highlightCategory.classList.add('active'); //highlight all categories category item
+
+  } catch (error) {
+    console.error("Failed to fetch all categories:", error);
+  }
+  document.querySelectorAll('.see-more-btn').forEach(
+    item => item.addEventListener('click', renderPageByCategory)
+  );
+}
+
+showAllCategories();
+showCategoryList();
 
 function renderCategory(data) {
-  const markup = data
-    .map(({ list_name }) => {
-      return `
-      <li class="category-list-item">
-				<h4 class="category-name">${list_name}</h4>
-			</li>
-    `;
-    })
-    .join('');
+  const markup = data.map(({ list_name }) => {
+    return `
+        <li class="category-list-item">
+            <h4 class="category-name">${list_name}</h4>
+        </li>`;
+  }).join('');
   categoryList.innerHTML += markup;
 }
+
 function renderTopCategoriesBooks(data) {
-  const markup = data
-    .map(({ book_image, author, title, _id }) => {
-      return `<li class="gallery-item" id="${_id}">
-            <div class="ig-wrapper">
-                <img src="${book_image}" alt="" class="book-cover" />
-            </div>
+  const markup = data.map(({ _id, book_image, author, title }) => {
+    return `
+        <li class="gallery-item" id="${_id}">
+            <img src="${book_image}" alt="" class="book-cover" />
             <h3 class="book-title">${isCorrectTextLength(title)}</h3>
             <h5 class="book-author">${isCorrectTextLength(author)}</h5>
-        </li>`;
-    })
-    .join('');
+        </li>`
+  }).join('');
   return markup;
 }
 
 function renderListGroup(data) {
+  const categoryTitle = 'Best Sellers Books';
+  renderCategoryTitleByColors(categoryTitle);
 
-  categoryName.textContent = 'Best Sellers Books';
   const { list_name, books } = data;
-  const markup = `<li class="gallery-list-group">
+  const markup = `
+    <li class="gallery-list-group">
       <h3 class="list-group-name">${list_name}</h3>
         <ul class="gallery-list-item">
           ${renderTopCategoriesBooks(books)}
@@ -100,89 +76,57 @@ function renderListGroup(data) {
   `;
   galleryList.innerHTML += markup;
 }
-function renderListByCategory(data) {
 
-  categoryName.textContent = data[0].list_name; //беремо назву категорії у першого елемента
-  console.log(data);
-  const markup = data
-    .map(({ book_image, title, author, _id }) => {
-      return `<li class="gallery-item" id="${_id}">
+function renderListByCategory(data) {
+  const categoryTitle = data[0].list_name; //беремо назву категорії у першого елемента
+  renderCategoryTitleByColors(categoryTitle);
+  const markup = data.map(({ _id, book_image, title, author }) => {
+    return `
+        <li class="gallery-item" id="${_id}">
           <img src="${book_image}" alt="${title}" class="book-cover" />
           <h3 class="book-title">${isCorrectTextLength(title)}</h3>
           <h5 class="book-author">${isCorrectTextLength(author)}</h5>
-        </li>`;
-    })
-    .join('');
+        </li>`
+  }).join('');
   galleryList.innerHTML = markup;
 }
 
 async function renderPageByCategory(e) {
+  // if (e.target === e.currentTarget) return;
+  const categoryName = e.target.closest('li').children[0].textContent;
 
-  if (e.target === e.currentTarget) return;
-  const categoryName = e.target.textContent;
   try {
-    const response = await fetchBooksByCategory(categoryName);
+    const response = await bookAPI.fetchBooksByCategory(categoryName);
+
     galleryList.innerHTML = '';
-    if (response.data.length != 0) {
+    if (response.length != 0) {
       galleryList.style.cssText = 'flex-direction: row; flex-wrap: wrap';
-      renderListByCategory(response.data);
+      renderListByCategory(response);
+      document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
     } else {
       showAllCategories();
-
     }
+    e.target.closest('li').classList.add('active')
   } catch (error) {
-    console.log(error);
+    console.error("Failed to render page by category:", error);
   }
 }
 
 function isCorrectTextLength(text) {
-
-  const maximumSymbolsCount = 16;
-  return text.length >= maximumSymbolsCount
-    ? `${text.slice(0, maximumSymbolsCount)}...`
-    : text;
-
+  const maximumSymbolsCount = 15;
+  return (text.length >= maximumSymbolsCount) ? `${text.slice(0, maximumSymbolsCount)}...` : text;
 }
 
 function renderCategoryTitleByColors(categoryTitle) {
-    let arrayFromBlackWords = categoryTitle.split(' ');
-    const blueWord = arrayFromBlackWords[arrayFromBlackWords.length - 1];
-    arrayFromBlackWords = arrayFromBlackWords.slice(0, arrayFromBlackWords.length - 1);
-    const blackWords = arrayFromBlackWords.join(' ');
+  let arrayFromBlackWords = categoryTitle.split(' ');
+  const blueWord = arrayFromBlackWords[arrayFromBlackWords.length - 1];
+  arrayFromBlackWords = arrayFromBlackWords.slice(0, arrayFromBlackWords.length - 1);
+  const blackWords = arrayFromBlackWords.join(' ');
 
-    categoryName.textContent = `${blackWords}`;
-    categoryName.nextElementSibling.textContent = `${blueWord}`;
+  categoryName.textContent = `${blackWords}`;
+  categoryName.nextElementSibling.textContent = `${blueWord}`;
 }
 
 //додаємо обробники подій
-categoryList.addEventListener('click', onClickCategory);
-allCategories.addEventListener('click', onClickAllCategory);
-
-async function onClickCategory(e) {
-  await renderPageByCategory(e);
-  addEventListeners();
-}
-
-async function onClickAllCategory(e) {
-  await showAllCategories(e);
-  addEventListeners();
-}
-
-export const addEventListeners = () => {
-  let liGalleryItems = document.querySelectorAll('.gallery-item');
-
-  liGalleryItems.forEach(item => {
-    item.addEventListener('click', onCklickBoock);
-  });
-};
-
-Promise.all([showCategoryList(), showAllCategories()]).then(() => {
-  addEventListeners();
-});
-
-async function onCklickBoock(e) {
-  let id = e.target.closest('.gallery-item').id;
-
-  const response = await fetchBookById(id);
-  showBoockDetails(response);
-}
+categoryList.addEventListener('click', renderPageByCategory);
+allCategories.addEventListener('click', showAllCategories);
