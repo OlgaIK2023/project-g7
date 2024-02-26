@@ -2,7 +2,7 @@
 let localStorageTheme = localStorage.getItem('theme');
 const switcher = document.querySelector('#theme');
 document.documentElement.getAttribute('theme');
-console.log(document.documentElement.getAttribute('theme'));
+
 switcher.addEventListener('click', () => {
     switcher.checked ? setDarkTheme() : setLightTheme();
 });
