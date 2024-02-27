@@ -5,4 +5,4 @@
           src="${n}" alt="${t}"/></span>
         </a>
       </li>`}).join("")}function tA(A){A.target.classList.contains("js-support")}let r=0,m=6,I=1;document.querySelector(".slider-container");const u=document.querySelector(".support-list"),iA=document.querySelector(".slider-button"),C=document.querySelectorAll(".support-link");let c=C.length;const a=32,sA=I*a;C.forEach(A=>{A.style.minHeight=`${a}px`});iA.addEventListener("click",()=>{nA()>=I?r-=sA:r=0,u.style.transition="transform 0.3s ease-out",E(),setTimeout(()=>{u.style.transition=""},300)});window.addEventListener("resize",()=>{c=C.length,E()});const E=()=>{u.style.transform=`translateY(${r}px)`};function nA(){const A=window.innerWidth;return A>=1440?c-(Math.abs(r)+m*a)/39:A>=768?c-(Math.abs(r)+m*a)/40:c-(Math.abs(r)+m*a)/55}export{hA as a,aA as b,rA as c,gA as d,oA as i,p as l,dA as s};
-//# sourceMappingURL=support-ua-fce6761c.js.map
+//# sourceMappingURL=support-ua-3d5d07f7.js.map
