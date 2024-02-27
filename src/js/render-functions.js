@@ -33,7 +33,6 @@ async function showAllCategories() {
     }
     const highlightCategory = document.querySelector('.category-list-item');
     highlightCategory.classList.add('active'); //highlight choosen category
-
   } catch (error) {
     console.error("Failed to fetch all categories:", error);
   }
@@ -149,10 +148,3 @@ function showSpinner(show) {
 //додаємо обробники подій
 categoryList.addEventListener('click', renderPageByCategory);
 allCategories.addEventListener('click', showAllCategories);
-
-
-// document.querySelector('.gallery-list').addEventListener('click', async e => {
-//   const bookId = e.target.closest('li').getAttribute('id');
-//   const book = await bookAPI.fetchBookById(bookId);
-//   console.log(book)
-// })
