@@ -4,7 +4,7 @@ const modalMenu = document.querySelector('.menu-section');
 import { currentUrl } from "./header";
 const shoppingListPage = document.querySelector('.nav-shopping');
 const homeListPage = document.querySelector('.nav-link');
-console.log(shoppingListPage);
+// console.log(shoppingListPage);
 buttonMenu.addEventListener('click', openModalMenu);
 buttonClose.addEventListener('click', closeModalMenu);
 
@@ -39,3 +39,18 @@ function mobMenuOnCurrentPage() {
     } 
 }
 mobMenuOnCurrentPage()
+
+
+const mobMenu = document.querySelector('.nav-menu-mob');
+  // let currentUrl = window.location.href;
+const links = mobMenu.getElementsByTagName('a');
+function currentPageMob() {
+    for (let i = 0; i < links.length; i++) {
+        links[i].classList.remove('current');
+    if (links[i].href === currentUrl) {
+        links[i].classList.add('current');
+    }
+}
+}
+
+currentPageMob();

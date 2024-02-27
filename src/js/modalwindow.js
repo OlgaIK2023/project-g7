@@ -64,9 +64,7 @@ async function renderModalwindow(book) {
               ><img
 
                 class="amazon-link"
-                src="../img/amazon.png"
-
-                
+                              
                 src="${amazonIcon}"
 
                 alt="amazon"
@@ -79,9 +77,7 @@ async function renderModalwindow(book) {
               ><img
 
                 class="apple-link"
-                src="../img/apple.png"
-
-                
+                               
                 src="${appleIcon}"
 
                 alt="amazon"
