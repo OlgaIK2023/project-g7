@@ -1,9 +1,9 @@
-import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-6261f0eb.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<p>This page is empty, add some books and proceed to order.</p>
+import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-b46ede22.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
         src="${$}"
         alt="Book"
-        />`,r=t.map(({book_image:s,title:o,author:a,_id:l,description:p,list_name:d,amazon_product_url:h,book_uri:m})=>`<li class="one-book">
+        />`,r=t.map(({book_image:s,title:o,author:a,_id:l,description:p,list_name:d,amazon_product_url:m,book_uri:h})=>`<li class="one-book">
             <img
                 class="img-book"
                 src="${s}"
@@ -26,8 +26,8 @@ import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-6261f0eb.js";
 
                 <div class="book-app">
                 <h3 class="name-author">${a}</h3>
-                <a href="${h}" target="_blank"><img class="amazon" src="${b}" alt="amazon" /></a>
-                <a href="${m}" target="_blank"><img class="apple" src="${g}" alt="apple" /></a>
+                <a href="${m}" target="_blank"><img class="amazon" src="${b}" alt="amazon" /></a>
+                <a href="${h}" target="_blank"><img class="apple" src="${g}" alt="apple" /></a>
                 </div>
             </div>
             </li>`).join("");e.innerHTML=t.length>0?r:i,document.querySelectorAll(".shopping-list .basket").forEach(s=>{const o=s.getAttribute("data-id");s.addEventListener("click",()=>{u(o);const a=n();c(a)})})}c(v);
