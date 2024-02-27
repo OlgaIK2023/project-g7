@@ -11,7 +11,7 @@ const books = loadFromLS();
 
 function renderShopList(data) {
     shoppingList.innerHTML = '';
-    const defaultMarkup = `<p>This page is empty, add some books and proceed to order.</p>
+    const defaultMarkup = `<p class="empty-page">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
         src="${booksIcon}"
@@ -42,8 +42,10 @@ function renderShopList(data) {
 
                 <div class="book-app">
                 <h3 class="name-author">${author}</h3>
+                <div class="application">
                 <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="${amazonIcon}" alt="amazon" /></a>
                 <a href="${book_uri}" target="_blank"><img class="apple" src="${appleIcon}" alt="apple" /></a>
+                </div>
                 </div>
             </div>
             </li>`;
