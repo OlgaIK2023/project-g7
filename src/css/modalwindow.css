@@ -137,6 +137,7 @@
 .remove-lokalstorage:focus {
   color: rgb(255, 255, 255);
   background: rgb(79, 46, 232);
+  transition: 0.4s;
 }
 
 .close {
@@ -219,7 +220,7 @@
     right: 127px;
     top: 433px;
     bottom: 40px;
-    color: rgba(17, 17, 17, 0.5);
+    color: var(--first-titles-color);
     font-weight: 400;
     line-height: 14px;
     letter-spacing: -4%;
@@ -242,7 +243,7 @@ filter: var(--color-apple);
 }
 
 
-/* .sale-place:hover .apple-link{
-  filter: var(--color-amazon) var(---color-hover);
-} */
+ /* .amazon-link:hover{
+  filter: var(---color-hover);
+}  */
 
