@@ -4,7 +4,6 @@
 
 background-color: var(--main-bg-color);
 
-    /* background: rgb(255, 255, 255); */
     ::-webkit-scrollbar {
         width: 8px;
         background-color: transparent;
@@ -238,6 +237,47 @@ background-color: var(--main-bg-color);
     color: #E0E0E0;
     transition: 250ms all ease;
 }
+
+.scrollup-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    bottom: 50px;
+    right: 50px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(79, 46, 232, 0.3);
+    border: none;
+    position: fixed;
+    cursor: pointer;
+    transition: 250ms all ease;
+}
+.btn-circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgb(79, 46, 232, 0.8);
+}
+.up-btn{
+    width: 22px;
+    height: 22px;
+    stroke: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    transform: rotate(180deg);
+}
+.scrollup-btn:hover{
+    transform: scale(1.1);
+}
+
 
 @media screen and (min-width:768px) {
     .navigation-category {

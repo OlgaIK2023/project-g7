@@ -11,7 +11,6 @@ async function showCategoryList() {
   try {
     const response = await bookAPI.fetchCategories();
     renderCategory(response);
-    allCategories.classList.add('active');
   } catch (error) {
     console.log("Failed to render show category list:", error);
   }
@@ -20,14 +19,14 @@ async function showCategoryList() {
 showCategoryList();
 
 async function showAllCategories() {
-  document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+  clearListFromActiveStatus();
   try {
     const response = await bookAPI.fetchTopCategories();
     for (let i = 0; i < 4; i++) {
       renderListGroup(response[i]);
     }
     const highlightCategory = document.querySelector('.category-list-item');
-    highlightCategory.classList.add('active'); //highlight all categories category item
+    highlightCategory.classList.add('active'); //highlight choosen category
 
   } catch (error) {
     console.error("Failed to fetch all categories:", error);
@@ -94,7 +93,7 @@ async function renderPageByCategory(e) {
     if (response.length != 0) {
       galleryList.style.cssText = 'flex-direction: row; flex-wrap: wrap';
       renderListByCategory(response);
-      document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+      clearListFromActiveStatus();
     } else {
       showAllCategories();
     }
@@ -119,6 +118,9 @@ function renderCategoryTitleByColors(categoryTitle) {
   categoryName.nextElementSibling.textContent = `${blueWord}`;
 }
 
+function clearListFromActiveStatus() {
+  document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+}
 //додаємо обробники подій
 categoryList.addEventListener('click', renderPageByCategory);
 allCategories.addEventListener('click', showAllCategories);
