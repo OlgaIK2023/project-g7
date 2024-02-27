@@ -104,7 +104,10 @@ background-color: var(--main-bg-color);
 
 .gallery-item:nth-child(-n+5) {
     display: none;
-    
+    transition: 250ms all ease;
+}
+.gallery-item:hover{
+    transform: scale(1.03);
 }
 .gallery-item:hover .quick-view-info{
     transform: translateY(0);
