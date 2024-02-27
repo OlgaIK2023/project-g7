@@ -31,11 +31,12 @@
     align-items: flex-start;
     width: fit-content;
     margin: 0 auto; 
+    font-weight: 700;
 }
 
 .home-page{
     display: block;
-    background-color: #eac645;
+
     border-radius: 36px;
     padding: 8px 16px;
     width: 72px;
@@ -44,40 +45,45 @@
     line-height: 1.29;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: #111;
+    color: var(--header-text-color);
 }
 
 .shopping-list-page {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--header-text-color);
 }
 
 
-.home-page:hover,
-.home-page:active,
-.home-page:focus{
-background-color: #eac645;
-}
-
-/* .shopping-list-page:hover,
-.shopping-list-page:active,
-.shopping-list-page:focus {
-    padding: 8px 16px;
-    background-color: #eac645;
-    border-radius: 36px;
-} */
 
 .shop-icon {
-    fill:#fff;
-    stroke: #fff;
+    stroke: var(--header-text-color);
+    fill: var(--header-text-color);
 }
+
+
+.current {
+    background-color: #eac645;
+    color: #111;
+    padding: 8px 16px;
+    border-radius: 36px;
+    font-weight: 700;
+
+}
+
+.current>.shop-icon {
+    stroke: #111;
+    fill: #111;
+}
+
+
+
 
 
 @media screen and (min-width:768px) {
