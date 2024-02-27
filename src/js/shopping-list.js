@@ -11,7 +11,7 @@ const books = loadFromLS();
 
 function renderShopList(data) {
     shoppingList.innerHTML = '';
-    const defaultMarkup = `<p>This page is empty, add some books and proceed to order.</p>
+    const defaultMarkup = `<p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
         src="${booksIcon}"
