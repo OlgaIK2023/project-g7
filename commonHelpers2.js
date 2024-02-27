@@ -1,4 +1,4 @@
-import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-67923f39.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<p class="empty">This page is empty, add some books and proceed to order.</p>
+import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-6a7928ce.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
         src="${$}"
