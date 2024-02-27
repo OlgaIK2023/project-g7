@@ -1,7 +1,7 @@
 
 let localStorageTheme = localStorage.getItem('theme');
 const switcher = document.querySelector('#theme');
-document.documentElement.getAttribute('theme');
+document.documentElement.getAttribute('data-theme');
 
 switcher.addEventListener('click', () => {
     switcher.checked ? setDarkTheme() : setLightTheme();
@@ -15,13 +15,13 @@ function setThemeColor(){
 function setDarkTheme() {
     switcher.checked = true;
     localStorage.setItem('theme', 'dark');
-   document.documentElement.setAttribute('theme','dark');
+   document.documentElement.setAttribute('data-theme','dark');
 };
 
 function setLightTheme() {
     switcher.checked = false;
     localStorage.setItem('theme', 'light');
-document.documentElement.setAttribute('theme','ligth');
+document.documentElement.setAttribute('data-theme','light');
 }
 
 setThemeColor();
