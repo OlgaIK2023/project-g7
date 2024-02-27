@@ -4,7 +4,7 @@ const modalMenu = document.querySelector('.menu-section');
 import { currentUrl } from "./header";
 const shoppingListPage = document.querySelector('.nav-shopping');
 const homeListPage = document.querySelector('.nav-link');
-console.log(shoppingListPage);
+// console.log(shoppingListPage);
 buttonMenu.addEventListener('click', openModalMenu);
 buttonClose.addEventListener('click', closeModalMenu);
 

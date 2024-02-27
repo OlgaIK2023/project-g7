@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 
+
 <html lang="en" data-theme="light">
 
 <head>
+
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./img/logo-book.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Shopping list</title>
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +19,6 @@
       rel="stylesheet"
     />
 
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -26,28 +26,54 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
-  
-<load src="./partials/header.html" />
-<load src="./partials/mobile-menu.html" />
-
+  <load src="./partials/header.html" />
+  <load src="./partials/mobile-menu.html" />
 
   <body>
     <div class="container">
-      <h1 class="title">
-        <span class="main-name">Shopping</span>
-        <span class="main-name-list">List</span>
-      </h1>
-      <ul class="shopping-list"></ul>
-      </ul>
+      <div class="shopping-list-wrapper">
+        <div class="support-ua-panel">
+          <!-- copy from homepage -->
+          <div class="shoping-support">
+            <aside class="support-box">
+              <h3 class="support-title">
+                Support Ukraine
+                <svg class="support-svg" width="20px" height="32px">
+                  <use href="./img/icons.svg#icon-Vector"></use>
+                </svg>
+              </h3>
+              <div class="slider-container">
+                <ul class="support-list js-support"></ul>
+              </div>
 
+              <div class="button-support slider-button">
+                <button class="support-button">
+                  <svg class="support-button-svg">
+                    <use href="./img/icons.svg#icon-arrowDown"></use>
+                  </svg>
+                </button>
+              </div>
+            </aside>
+          </div>
+        </div>
+        
+          <div class="list-of-added-books">
+            <h1 class="title">
+              <span class="main-name">Shopping</span>
+              <span class="main-name-list">List</span>
+            </h1>
+            <ul class="shopping-list"></ul>
+          </div>
+        
+      </div>
     </div>
 
     <script type="module" src="./js/themechange.js"></script>
 
-<script type="module" src="./js/header.js"></script>
-<script type="module" src="./js/mob-menu.js"></script>
+    <script type="module" src="./js/header.js"></script>
+    <script type="module" src="./js/mob-menu.js"></script>
 
     <script type="module" src="./js/shopping-list.js"></script>
+    <script type="module" src="./js/support-ua.js"></script>
   </body>
 </html>
-
