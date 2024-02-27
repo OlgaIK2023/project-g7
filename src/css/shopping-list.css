@@ -121,17 +121,6 @@ body {
   border: none;
 }
 
-.basket {
-  background-color: #4f2ee8;
-  width: 28px;
-  height: 28px;
-  border-radius: 100%;
-  margin-left: 51px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .trash {
   fill: #ffffff;
 }
@@ -144,25 +133,14 @@ body {
 }
 
 .amazon {
-  filter: grayscale(100%);
+  filter: var(--color-amazon); 
   width: 32px;
   height: 11px;
 }
 
-.book-app {
-  display: flex;
-  align-items: center;
-  padding-top: 20px;
-  gap: 8px;
-}
-.amazon {
-  filter: grayscale(100%);
-  width: 32px;
-  height: 11px;
-}
 
 .apple {
-  filter: grayscale(100%);
+  filter: var(--color-apple);
   width: 16px;
   height: 16px;
 }
@@ -271,3 +249,6 @@ body {
   
   
 }
+
+
+.empty{color: var(--text-shopping-list);}

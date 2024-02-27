@@ -39,3 +39,18 @@ function mobMenuOnCurrentPage() {
     } 
 }
 mobMenuOnCurrentPage()
+
+
+const mobMenu = document.querySelector('.nav-menu-mob');
+  // let currentUrl = window.location.href;
+const links = mobMenu.getElementsByTagName('a');
+function currentPageMob() {
+    for (let i = 0; i < links.length; i++) {
+        links[i].classList.remove('current');
+    if (links[i].href === currentUrl) {
+        links[i].classList.add('current');
+    }
+}
+}
+
+currentPageMob();

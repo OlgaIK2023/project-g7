@@ -4,6 +4,7 @@ const homeLink = document.querySelector('.nav-menu');
 const links = homeLink.getElementsByTagName('a');
 function currentPage() {
     for (let i = 0; i < links.length; i++) {
+        links[i].classList.remove('current');
     if (links[i].href === currentUrl) {
         links[i].classList.add('current');
     }
