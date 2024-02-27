@@ -102,7 +102,7 @@ background-color: var(--main-bg-color);
     margin-top: 40px;
 }
 
-.gallery-item:nth-child(-n+5) {
+.gallery-item:nth-child(-n+4) {
     display: none;
     transition: 250ms all ease;
 }

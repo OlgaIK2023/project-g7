@@ -149,10 +149,3 @@ function showSpinner(show) {
 //додаємо обробники подій
 categoryList.addEventListener('click', renderPageByCategory);
 allCategories.addEventListener('click', showAllCategories);
-
-
-// document.querySelector('.gallery-list').addEventListener('click', async e => {
-//   const bookId = e.target.closest('li').getAttribute('id');
-//   const book = await bookAPI.fetchBookById(bookId);
-//   console.log(book)
-// })

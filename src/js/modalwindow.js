@@ -11,13 +11,16 @@ import amazonIcon from '../img/amazon.png';
 import appleIcon from '../img/apple.png';
 import sprite from '../img/icons.svg';
 
+const body = document.querySelector("body")
+
+
 const bookAPI = new BookAPI();
 
 document.querySelector('.gallery-list').addEventListener('click', async e => {
-  const bookId = e.target.parentNode.getAttribute('id');
+  const bookId = e.target.closest('li').getAttribute('id');
   const book = await bookAPI.fetchBookById(bookId);
   renderModalwindow(book);
-
+  body.style.overflow = "hidden";
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
 
@@ -167,6 +170,7 @@ async function renderModalwindow(book) {
 function closeModal() {
   removeEventListeners();
   const modal = document.querySelector('.backdrop');
+  body.style.overflow = "visible";
   modal.remove();
 }
 
