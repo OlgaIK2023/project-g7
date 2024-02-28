@@ -12,14 +12,16 @@ import appleIcon from '../img/apple.png';
 import sprite from '../img/icons.svg';
 
 const bookAPI = new BookAPI();
+const body = document.querySelector("body")
 
 document.querySelector('.gallery-list').addEventListener('click', async e => {
-  const bookId = e.target.parentNode.getAttribute('id');
+  const bookId = e.target.closest('li').getAttribute('id');
   const book = await bookAPI.fetchBookById(bookId);
   renderModalwindow(book);
 
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
+  body.style.overflow = "hidden";
 
   closeModalWindow.addEventListener('click', closeModal);
   modal.addEventListener('click', modalClickHandler);
@@ -169,6 +171,7 @@ function closeModal() {
 function removeEventListeners() {
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
+  body.style.overflow = "visible";
   closeModalWindow.removeEventListener('click', closeModal);
   modal.removeEventListener('click', modalClickHandler);
   document.removeEventListener('keydown', keydownHandler);
