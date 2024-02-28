@@ -12,7 +12,7 @@ import appleIcon from '../img/apple.png';
 import sprite from '../img/icons.svg';
 
 const bookAPI = new BookAPI();
-const body = document.querySelector("body")
+const body = document.querySelector('body');
 
 document.querySelector('.gallery-list').addEventListener('click', async e => {
   const bookId = e.target.closest('li').getAttribute('id');
@@ -21,23 +21,12 @@ document.querySelector('.gallery-list').addEventListener('click', async e => {
 
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
-  body.style.overflow = "hidden";
+  body.style.overflow = 'hidden';
 
   closeModalWindow.addEventListener('click', closeModal);
   modal.addEventListener('click', modalClickHandler);
   document.addEventListener('keydown', keydownHandler);
 });
-
-// export const showBoockDetails = book => {
-//   renderModalwindow(book);
-
-//   const modal = document.querySelector('.backdrop');
-//   const closeModalWindow = document.querySelector('.close-modal');
-
-//   closeModalWindow.addEventListener('click', closeModal);
-//   modal.addEventListener('click', modalClickHandler);
-//   document.addEventListener('keydown', keydownHandler);
-// };
 
 async function renderModalwindow(book) {
   const markup = `<div class="backdrop">
@@ -126,12 +115,14 @@ async function renderModalwindow(book) {
         addDelBtn.style.left = '62px';
         addDelBtn.style.top = '695px';
         resize.style.height = '762px';
+        addDelBtn.style.fontSize = '12px';
       } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
         addDelBtn.style.width = '279px';
         addDelBtn.style.position = 'absolute';
         addDelBtn.style.left = '28px';
         addDelBtn.style.top = '700px';
         resize.style.height = '806px';
+        // addDelBtn.style.fontSize = '10px';
       }
     }
 
@@ -171,7 +162,7 @@ function closeModal() {
 function removeEventListeners() {
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
-  body.style.overflow = "visible";
+  body.style.overflow = 'visible';
   closeModalWindow.removeEventListener('click', closeModal);
   modal.removeEventListener('click', modalClickHandler);
   document.removeEventListener('keydown', keydownHandler);
