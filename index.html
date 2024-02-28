@@ -17,41 +17,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
   
   <script type="module" crossorigin src="/project-g7/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-g7/assets/support-ua-6a7928ce.js">
+  <link rel="modulepreload" crossorigin href="/project-g7/assets/support-ua-ba5272cb.js">
   <link rel="modulepreload" crossorigin href="/project-g7/assets/vendor-0cb09735.js">
-  <link rel="stylesheet" href="/project-g7/assets/support-ua-fedd2cb8.css">
+  <link rel="stylesheet" href="/project-g7/assets/support-ua-b88c5bd7.css">
 </head>
 
 <body>
   <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
 <header class="header">
   <div class="container header-container">
-    <a href="./index.html" class="logo-link">
+    <a href="./index.html" class="logo-link" aria-label="Bookshelf">
       <svg class="icon-logo" width="109" height="28">
         <use href="/project-g7/assets/icons-ed77f212.svg#icon-logo-bookshelf"></use>
       </svg>
     </a>
     <nav class="nav-menu">
-
-      <a href="./index.html" class="nav-link current">Home</a>
-      <a href="./shopping-list.html" class="nav-shopping">Shopping list
-
+      <a href="./index.html" class="nav-link current"  aria-label="Bookshelf main page">Home</a>
+      <a href="./shopping-list.html" class="nav-shopping" aria-label="Our shopping books list">Shopping list
         <svg class="shopping-icon" width="20" height="20">
           <use href="/project-g7/assets/icons-ed77f212.svg#icon-uil_cart"></use>
         </svg>
       </a>
     </nav>
     <div class="theme-container">
-      <label class="switch">
+      <label for="theme" class="switch">
         <input type="checkbox" class="switch_input" name="theme" id="theme" />
         <span class="switch_slider"> </span>
       </label>
-      <button class="btn-menu hidden" type="button">
+      <button class="btn-menu hidden" id="menu-button" type="button">
         <svg class="icon-menu" width="28" height="28">
           <use href="/project-g7/assets/icons-ed77f212.svg#icon-align-left"></use>
         </svg>
       </button>
-      <button class="btn-close" type="button">
+      <button class="btn-close is-open" id="close-button" type="button">
         <svg class="icon-close" width="28" height="28">
           <use href="/project-g7/assets/icons-ed77f212.svg#icon-x-close"></use>
         </svg>
@@ -63,10 +61,10 @@
 
 
   <main>
-    <section class="menu-section is-open">
+    <section class="menu-section">
     <nav class="nav-menu-mob">
- <a href="./index.html" class="home-page current">Home</a>
- <a href="./shopping-list.html" class="shopping-list-page">Shopping list
+ <a href="./index.html" class="home-page current" aria-label="Bookshelf">Home</a>
+ <a href="./shopping-list.html" class="shopping-list-page" aria-label="Shopping books list">Shopping list
     <svg class="shop-icon" width="20" height="20">
         <use href="/project-g7/assets/icons-ed77f212.svg#icon-uil_cart"></use>
     </svg>
