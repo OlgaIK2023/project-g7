@@ -216,8 +216,9 @@ padding-top: 40px;
     
     
     display: block;
+    margin-right: 40px;
   }
-}
+/* } */
 
 .shopping-list {
   display: flex;
@@ -234,7 +235,7 @@ padding-top: 40px;
   flex-direction: column;
 } */
 
-.shopping-list-wrapper {
+.container.shopping-list-wrapper {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
@@ -245,13 +246,26 @@ padding-top: 40px;
   width: 396px;
 }
 
+
+
+
+}
+
+/* END of MEDIA */
+
+
+.empty{
+  color: var(--text-shopping-list);
+max-width: 349px;
+text-align: center;
+align-content: center;
+}
+
 .list-of-added-books {
   display: flex;
   flex-direction: column;
-  
+  width: 100%;
+  justify-content: space-between;
   
   
 }
-
-
-.empty{color: var(--text-shopping-list);}
