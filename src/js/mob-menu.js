@@ -24,25 +24,16 @@ function openModalMenu() {
 
 // mob-menu current page//
 function mobMenuOnCurrentPage() {
-   if (shoppingListPage.href===currentUrl) {
+   if (shoppingListPage.href===currentUrl || homeListPage.href===currentUrl) {
       buttonClose.classList.add('hidden');
       modalMenu.classList.add('hidden');
       buttonMenu.classList.remove('hidden');
-      buttonMenu.addEventListener('click', openModalMenu);
-    };
-
-     if (homeListPage.href===currentUrl) {
-      buttonClose.classList.add('hidden');
-    modalMenu.classList.add('hidden');
-      buttonMenu.classList.remove('hidden');
-      buttonMenu.addEventListener('click', openModalMenu);
-    } 
+    };  
 }
 mobMenuOnCurrentPage()
 
 
 const mobMenu = document.querySelector('.nav-menu-mob');
-  // let currentUrl = window.location.href;
 const links = mobMenu.getElementsByTagName('a');
 function currentPageMob() {
     for (let i = 0; i < links.length; i++) {
