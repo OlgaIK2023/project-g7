@@ -28,7 +28,7 @@ document.querySelector('.gallery-list').addEventListener('click', async e => {
   document.addEventListener('keydown', keydownHandler);
 });
 
-async function renderModalwindow(book) {
+function renderModalwindow(book) {
   const markup = `<div class="backdrop">
   <div class="modal">
     <button class="close-modal">
@@ -115,8 +115,8 @@ async function renderModalwindow(book) {
     addDelBtn.textContent = buttonText;
     // paragraphCongrat.textContent = paragraphCongratText;
 
-    const resize = document.querySelector('.modal');
-    const distance = document.querySelector('.desctop');
+    // const resize = document.querySelector('.modal');
+    // const distance = document.querySelector('.desctop');
 
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
@@ -137,15 +137,15 @@ async function renderModalwindow(book) {
       }
     }
 
-    const tablet = window.innerWidth >= 769;
+    // const tablet = window.innerWidth >= 769;
 
-    if (tablet) {
-      if (buttonText === 'ADD TO SHOPPING LIST') {
-        resize.style.height = '465px';
-      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
-        resize.style.height = '501px';
-      }
-    }
+    // if (tablet) {
+    //   if (buttonText === 'ADD TO SHOPPING LIST') {
+    //     resize.style.height = '465px';
+    //   } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+    //     // resize.style.height = '501px';
+    //   }
+    // }
   }
   updateButtonAndText();
 
