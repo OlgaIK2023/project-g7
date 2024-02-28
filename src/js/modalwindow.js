@@ -97,13 +97,23 @@ async function renderModalwindow(book) {
     const buttonText = isBookAlreadyAdded
       ? 'REMOVE FROM THE SHOPPING LIST'
       : 'ADD TO SHOPPING LIST';
-    const paragraphCongratText = isBookAlreadyAdded
-      ? `Congratulations! You have added the book to the shopping list. To delete,
+    // const paragraphCongratText = isBookAlreadyAdded
+    //   ? `Congratulations! You have added the book to the shopping list. To delete,
+    //   press the button "Remove from the shopping list".`
+    //   : '';
+    const congratulateMessage = `Congratulations! You have added the book to the shopping list. To delete,
       press the button "Remove from the shopping list".`
-      : '';
+
+    paragraphCongrat.textContent = congratulateMessage;
+
+    if (isBookAlreadyAdded) {
+      paragraphCongrat.style.display = 'block'
+    } else {
+      paragraphCongrat.style.display = 'none';
+    }
 
     addDelBtn.textContent = buttonText;
-    paragraphCongrat.textContent = paragraphCongratText;
+    // paragraphCongrat.textContent = paragraphCongratText;
 
     const resize = document.querySelector('.modal');
     const distance = document.querySelector('.desctop');
@@ -111,18 +121,19 @@ async function renderModalwindow(book) {
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
       if (buttonText === 'ADD TO SHOPPING LIST') {
-        addDelBtn.style.width = '211px';
+        // addDelBtn.style.width = '211px';
         addDelBtn.style.left = '62px';
         addDelBtn.style.top = '695px';
-        resize.style.height = '762px';
-        addDelBtn.style.fontSize = '12px';
+
+        // resize.style.height = '762px';
       } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
-        addDelBtn.style.width = '279px';
-        addDelBtn.style.position = 'absolute';
-        addDelBtn.style.left = '28px';
-        addDelBtn.style.top = '700px';
-        resize.style.height = '806px';
-        // addDelBtn.style.fontSize = '10px';
+        addDelBtn.style.padding = "14px 23px 14px 23px";
+        // addDelBtn.style.width = '279px';
+        // addDelBtn.style.position = 'absolute';
+        // addDelBtn.style.left = '28px';
+        // addDelBtn.style.top = '700px';
+        // resize.style.height = '806px';
+
       }
     }
 
