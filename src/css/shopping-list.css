@@ -52,14 +52,14 @@ body {
   min-height: 170px;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
   background-color: var(--header-bg-color);
+  position: relative;
 }
 
 .book-name {
   font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 17px;
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -68,8 +68,8 @@ body {
 }
 
 .up-part {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
 }
 .type-name {
   font-family: 'DM Sans', sans-serif;
@@ -83,7 +83,7 @@ body {
 
 .text-discription {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
@@ -105,7 +105,6 @@ body {
   line-height: 1.17;
   letter-spacing: -0.04em;
   color: #b4afaf;
-  padding-right: 58px;
 }
 
 .img {
@@ -118,8 +117,16 @@ body {
 .img-book {
   border-radius: 8px;
   width: 100px;
-  height: 142px;
+  height: 100%;
   margin-right: 14px;
+  object-fit: cover;
+}
+
+.books-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 }
 
 .basket {
@@ -127,11 +134,13 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 100%;
-  margin-left: 51px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 
 .trash {
@@ -141,8 +150,10 @@ body {
 .book-app {
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  gap: 8px;
+
+  padding-top: 20px;
+  justify-content: space-between;
+
 }
 
 .amazon {
@@ -182,7 +193,7 @@ body {
   }
   .img-book {
     width: 116px;
-    height: 165px;
+    height: 100%;
     margin-right: 24px;
   }
 
@@ -190,12 +201,14 @@ body {
     margin-top: 56px;
   }
 
-  .name-author {
+  /* .name-author {
     padding-right: 348px;
-  }
+  } */
 
   .basket {
-    margin-left: 368px;
+    top: 24px;
+    right: 24px;
+    /* margin-left: 368px; */
   }
 
   .amazon {
@@ -218,10 +231,10 @@ body {
   .text-discription {
     width: 808px;
   }
-
+/* 
   .name-author {
     padding-right: 645px;
-  }
+  } */
   .book-app {
     margin-top: 46px;
   }
@@ -235,12 +248,17 @@ body {
   }
   /* } */
 
-  .shopping-list {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-items: center;
-  }
+
+.shopping-list {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
 
   .container.shopping-list-wrapper {
     display: flex;

@@ -9,7 +9,7 @@ const shoppingList = document.querySelector('.shopping-list');
 const books = loadFromLS();
 
 
-function renderShopList(data) {
+export function renderShopList(data) {
     shoppingList.innerHTML = '';
     const defaultMarkup = `<div class="empty-wrapper">
     <p class="empty">This page is empty, add some books and proceed to order.</p>
@@ -21,7 +21,7 @@ function renderShopList(data) {
     </div>`
     const markup = data
         .map(({ book_image, title, author, _id, description, list_name, amazon_product_url, book_uri }) => {
-        return `<li class="one-book">
+            return `<li class="one-book">
             <img
                 class="img-book"
                 src="${book_image}"
@@ -29,7 +29,7 @@ function renderShopList(data) {
             />
             <div class="discription">
                 <div class="up-part">
-                <h2 class="book-name">${title}</h2>
+                <h2 class="book-name">${isCorrectNameLength(title)}</h2>
 
                 <button data-id="${_id}" class="basket" type="button">
                     <svg class="trash" width="16" height="16">
@@ -37,28 +37,30 @@ function renderShopList(data) {
                     </svg>
                 </button>
                 </div>
-                <h3 class="type-name">${list_name}</h3>
+                <h3 class="type-name">${isCorrectNameLength(list_name)}</h3>
                 <p class="text-discription">
-                ${description}
+                ${description ? isCorrectTextLength(description) : 'no description'}
                 </p>
 
                 <div class="book-app">
-                <h3 class="name-author">${author}</h3>
-                <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="${amazonIcon}" alt="amazon" /></a>
-                <a href="${book_uri}" target="_blank"><img class="apple" src="${appleIcon}" alt="apple" /></a>
+                <h3 class="name-author">${isCorrectNameLength(author)}</h3>
+                <div class="books-wrapper">
+                    <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="${amazonIcon}" alt="amazon" /></a>
+                    <a href="${book_uri}" target="_blank"><img class="apple" src="${appleIcon}" alt="apple" /></a>
+                </div>
                 </div>
             </div>
             </li>`;
         })
-            .join('');
-    
+        .join('');
+
     shoppingList.innerHTML = data.length > 0 ? markup : defaultMarkup;
-    
+
     const booksItems = document.querySelectorAll('.shopping-list .basket');
 
     booksItems.forEach(item => {
         const bookId = item.getAttribute('data-id');
-        item.addEventListener('click', () => { 
+        item.addEventListener('click', () => {
             deleteFromLS(bookId);
             const updatedBooks = loadFromLS();
             renderShopList(updatedBooks);
@@ -67,3 +69,21 @@ function renderShopList(data) {
 }
 
 renderShopList(books)
+
+function isCorrectNameLength(text) {
+    if (window.innerWidth < 768) {
+        const maximumSymbolsCount = 15;
+        return (text.length >= maximumSymbolsCount) ? `${text.slice(0, maximumSymbolsCount)}...` : text;
+    } else {
+        return text;
+    }
+}
+
+function isCorrectTextLength(text) {
+    if (window.innerWidth < 768) {
+        const maximumSymbolsCount = 80;
+        return (text.length >= maximumSymbolsCount) ? `${text.slice(0, maximumSymbolsCount)}...` : text;
+    } else {
+        return text;
+    }
+}

@@ -1,0 +1,43 @@
+.paggination-btns-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+.paggination-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.btn{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgb(17, 17, 17);
+    background-color: transparent;
+    transition: 250ms all ease;
+
+    color: rgb(17, 17, 17);
+    font-size: 18px;
+    font-weight: 700;
+}
+.btn:hover{
+    background-color: rgba(17, 17, 17, 0.8);
+    color: white;
+}
+.currentBtn{
+    background: rgb(17, 17, 17);
+    color: white;
+}
+
+.switch-btn{
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgb(17, 17, 17);
+    background-color: #EAC645;
+    border-radius: 50%;
+    transition: 250ms all ease;
+}
+.switch-btn:hover{
+    background-color: #4F2EE8;
+    color: white;
+}
