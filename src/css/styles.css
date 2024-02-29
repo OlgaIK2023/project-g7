@@ -13,6 +13,7 @@
 @import url('./shopping-list.css');
 @import url('./modalwindow.css');
 @import url('./support-ua.css');
+@import url('./paggination.css');
 
 
 :root[data-theme='light']{
