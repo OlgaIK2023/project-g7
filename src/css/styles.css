@@ -13,7 +13,11 @@
 @import url('./shopping-list.css');
 @import url('./modalwindow.css');
 @import url('./support-ua.css');
+
 @import url('./paggination.css');
+
+@import url('./scroll-up.css');
+
 
 
 :root[data-theme='light']{
@@ -24,10 +28,14 @@
   --main-bg-color-modal: #ffffff;
   --header-logo-color: #000000;
   --first-titles-color: #111111;
+
+
+
+
   --color-of-categoryAll-text: #4f2ee8;
   --color-of-category-text: rgba(17, 17, 17, 0.6);
   --color-amazon: grayscale(100%);
-  --color-hover:drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+  --color-hover: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
   --color-apple: grayscale(100%);
   --text-shopping-list:rgba(0, 0, 0, 0.6);
 }
@@ -44,6 +52,7 @@
   --first-text-color: #ffffff;
   --color-of-categoryAll-text: #eac645;
   --color-of-category-text: rgba(255, 255, 255, 0.6);
+
   --color-amazon:brightness(0) invert(1);
   --color-hover:drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   --color-apple:grayscale(100%);

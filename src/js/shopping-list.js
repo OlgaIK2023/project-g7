@@ -11,12 +11,14 @@ const books = loadFromLS();
 
 export function renderShopList(data) {
     shoppingList.innerHTML = '';
-    const defaultMarkup = `<p class="empty">This page is empty, add some books and proceed to order.</p>
+    const defaultMarkup = `<div class="empty-wrapper">
+    <p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
         src="${booksIcon}"
         alt="Book"
-        />`
+        />
+    </div>`
     const markup = data
         .map(({ book_image, title, author, _id, description, list_name, amazon_product_url, book_uri }) => {
             return `<li class="one-book">

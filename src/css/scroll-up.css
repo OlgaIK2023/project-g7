@@ -1,0 +1,33 @@
+.scroll-up-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background-color: #4F2EE8;
+    border-color: transparent;
+    border: 5px solid rgba(192, 207, 230, 0.74);
+    box-shadow: 0 0 10px rgba(198, 215, 241, 0.63);
+}
+
+.scroll-up-btn:hover {
+    cursor: pointer;
+    border: 5px solid rgba(231, 232, 235, 0.493);
+    box-shadow: 0 0 20px rgba(199, 210, 221, 0.514);
+    transition: box-shadow 0.3s ease;
+}
+
+.visually-hidden-scroll {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+}

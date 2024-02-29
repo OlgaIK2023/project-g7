@@ -11,7 +11,7 @@
     background-repeat:no-repeat;
     background-position: bottom 0px right 0px;
     background-size: contain;
-    z-index:1;
+    z-index:2;
 }
 
 
@@ -82,7 +82,9 @@
     fill: #111;
 }
 
-
+.no-scroll {
+    overflow: hidden;
+}
 
 
 
@@ -91,6 +93,9 @@
     display: none;
 }
 
+.no-scroll{
+overflow:visible;
+}
 }
 
 .is-open {
