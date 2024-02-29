@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./img/logo-book.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Bookshelf</title>
+<html lang="en" data-theme="light">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./img/logo-book.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
+  <title>Bookshelf</title>
 
-  <body>
-    <load src="./partials/header.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
 
-    <main>
-      <load src="partials/mobile-menu.html" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-      <load src="partials/homepage.html" />
-      <load src="partials/modalwindow.html" />
-      <load src="partials/scroll-up.html" />
-    </main>
+<body class="no-scroll">
+  <load src="./partials/header.html" />
 
-    <script type="module" src="./main.js"></script>
-  </body>
+  <main>
+    <load src="partials/mobile-menu.html" />
+   
+    <load src="partials/homepage.html" />
+    <load src="partials/modalwindow.html" />
+<load src="partials/scroll-up.html" />
+
+
+
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>

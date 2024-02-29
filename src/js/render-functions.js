@@ -3,7 +3,11 @@ import BookAPI from "./api";
 export const categoryList = document.querySelector('.category-list'),
   galleryList = document.querySelector('.gallery-list'),
   allCategories = document.querySelector('#all-categories'),
-  categoryName = document.querySelector('.category-title');
+  categoryName = document.querySelector('.category-title'),
+  galleryMainTitle = document.querySelector('.title-wrapper'),
+  backdropLoader = document.querySelector('.backdrop-loader'),
+  loader = document.querySelector('.loader');
+
 
 const bookAPI = new BookAPI();
 
@@ -11,7 +15,6 @@ async function showCategoryList() {
   try {
     const response = await bookAPI.fetchCategories();
     renderCategory(response);
-    allCategories.classList.add('active');
   } catch (error) {
     console.log("Failed to render show category list:", error);
   }
@@ -20,15 +23,16 @@ async function showCategoryList() {
 showCategoryList();
 
 async function showAllCategories() {
-  document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+  clearListFromActiveStatus();
   try {
+    showSpinner(true);
     const response = await bookAPI.fetchTopCategories();
+    showSpinner(false);
     for (let i = 0; i < 4; i++) {
       renderListGroup(response[i]);
     }
     const highlightCategory = document.querySelector('.category-list-item');
-    highlightCategory.classList.add('active'); //highlight all categories category item
-
+    highlightCategory.classList.add('active'); //highlight choosen category
   } catch (error) {
     console.error("Failed to fetch all categories:", error);
   }
@@ -53,7 +57,10 @@ function renderBooks(data) {
   const markup = data.map(({ _id, book_image, author, title }) => {
     return `
         <li class="gallery-item" id="${_id}">
-            <img src="${book_image}" alt="" class="book-cover" />
+            <div class="book-image-container">
+              <img src="${book_image}" alt="${title}" class="book-cover" loading="lazy"/>
+              <p class="quick-view-info">Quick view</p>
+            </div>
             <h3 class="book-title">${isCorrectTextLength(title)}</h3>
             <h5 class="book-author">${isCorrectTextLength(author)}</h5>
         </li>`
@@ -64,6 +71,7 @@ function renderBooks(data) {
 function renderListGroup(data) {
   const categoryTitle = 'Best Sellers Books';
   renderCategoryTitleByColors(categoryTitle);
+  galleryMainTitle.style.display = 'flex';
 
   const { list_name, books } = data;
   const markup = `
@@ -88,13 +96,17 @@ async function renderPageByCategory(e) {
   const categoryName = e.target.closest('li').children[0].textContent;
 
   try {
-    const response = await bookAPI.fetchBooksByCategory(categoryName);
+    showSpinner(true);
     galleryList.innerHTML = '';
+    galleryMainTitle.style.display = 'none';
+    const response = await bookAPI.fetchBooksByCategory(categoryName);
 
     if (response.length != 0) {
+      showSpinner(false);
       galleryList.style.cssText = 'flex-direction: row; flex-wrap: wrap';
+      galleryMainTitle.style.display = 'flex';
       renderListByCategory(response);
-      document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+      clearListFromActiveStatus();
     } else {
       showAllCategories();
     }
@@ -117,6 +129,20 @@ function renderCategoryTitleByColors(categoryTitle) {
 
   categoryName.textContent = `${blackWords}`;
   categoryName.nextElementSibling.textContent = `${blueWord}`;
+}
+
+function clearListFromActiveStatus() {
+  document.querySelectorAll('.category-list-item').forEach(item => item.classList.remove('active'));
+}
+
+function showSpinner(show) {
+  if (show) {
+    loader.classList.remove('hidden');
+    backdropLoader.classList.remove('hidden');
+  } else {
+    loader.classList.add('hidden');
+    backdropLoader.classList.add('hidden');
+  }
 }
 
 //додаємо обробники подій

@@ -1,16 +1,24 @@
 import { deleteFromLS, loadFromLS } from "./local-storage";
+
+import amazonIcon from '../img/amazon.png';
+import appleIcon from '../img/apple.png';
+import sprite from '../img/icons.svg';
+import booksIcon from '../img/IMG_9606 1.png';
+
 const shoppingList = document.querySelector('.shopping-list');
 const books = loadFromLS();
 
 
 function renderShopList(data) {
     shoppingList.innerHTML = '';
-    const defaultMarkup = `<p>This page is empty, add some books and proceed to order.</p>
+    const defaultMarkup = `<div class="empty-wrapper">
+    <p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
-        src="../img/IMG_9606 1.png"
+        src="${booksIcon}"
         alt="Book"
-        />`
+        />
+    </div>`
     const markup = data
         .map(({ book_image, title, author, _id, description, list_name, amazon_product_url, book_uri }) => {
         return `<li class="one-book">
@@ -25,7 +33,7 @@ function renderShopList(data) {
 
                 <button data-id="${_id}" class="basket" type="button">
                     <svg class="trash" width="16" height="16">
-                    <use href="./img/icons.svg#icon-trash-031"></use>
+                    <use href="${sprite}#icon-trash-031"></use>
                     </svg>
                 </button>
                 </div>
@@ -36,8 +44,8 @@ function renderShopList(data) {
 
                 <div class="book-app">
                 <h3 class="name-author">${author}</h3>
-                <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="./img/amazon.png" alt="amazon" /></a>
-                <a href="${book_uri}" target="_blank"><img class="apple" src="./img/apple.png" alt="apple" /></a>
+                <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="${amazonIcon}" alt="amazon" /></a>
+                <a href="${book_uri}" target="_blank"><img class="apple" src="${appleIcon}" alt="apple" /></a>
                 </div>
             </div>
             </li>`;
