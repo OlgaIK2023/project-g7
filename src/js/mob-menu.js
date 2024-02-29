@@ -1,6 +1,6 @@
  export const buttonClose = document.querySelector('.btn-close');
  export const buttonMenu = document.querySelector('.btn-menu');
- export const modalMenu = document.querySelector('.menu-section');
+const modalMenu = document.querySelector('.menu-section');
 import { currentUrl } from "./header";
 const shoppingListPage = document.querySelector('.nav-shopping');
 const homeListPage = document.querySelector('.nav-link');
@@ -37,9 +37,8 @@ const mobMenu = document.querySelector('.nav-menu-mob');
 const links = mobMenu.getElementsByTagName('a');
 function currentPageMob() {
     for (let i = 0; i < links.length; i++) {
-        links[0].classList.add('current');
-      if (links[i].href === currentUrl) {
-        links[0].classList.remove('current');
+        links[i].classList.remove('current');
+    if (links[i].href === currentUrl) {
         links[i].classList.add('current');
     }
 }
