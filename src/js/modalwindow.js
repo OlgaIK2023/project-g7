@@ -12,7 +12,7 @@ import appleIcon from '../img/apple.png';
 import sprite from '../img/icons.svg';
 
 const bookAPI = new BookAPI();
-const body = document.querySelector("body")
+const body = document.querySelector('body');
 
 document.querySelector('.gallery-list').addEventListener('click', async e => {
   const bookId = e.target.closest('li').getAttribute('id');
@@ -21,25 +21,14 @@ document.querySelector('.gallery-list').addEventListener('click', async e => {
 
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
-  body.style.overflow = "hidden";
+  body.style.overflow = 'hidden';
 
   closeModalWindow.addEventListener('click', closeModal);
   modal.addEventListener('click', modalClickHandler);
   document.addEventListener('keydown', keydownHandler);
 });
 
-// export const showBoockDetails = book => {
-//   renderModalwindow(book);
-
-//   const modal = document.querySelector('.backdrop');
-//   const closeModalWindow = document.querySelector('.close-modal');
-
-//   closeModalWindow.addEventListener('click', closeModal);
-//   modal.addEventListener('click', modalClickHandler);
-//   document.addEventListener('keydown', keydownHandler);
-// };
-
-async function renderModalwindow(book) {
+function renderModalwindow(book) {
   const markup = `<div class="backdrop">
   <div class="modal">
     <button class="close-modal">
@@ -108,42 +97,55 @@ async function renderModalwindow(book) {
     const buttonText = isBookAlreadyAdded
       ? 'REMOVE FROM THE SHOPPING LIST'
       : 'ADD TO SHOPPING LIST';
-    const paragraphCongratText = isBookAlreadyAdded
-      ? `Congratulations! You have added the book to the shopping list. To delete,
+    // const paragraphCongratText = isBookAlreadyAdded
+    //   ? `Congratulations! You have added the book to the shopping list. To delete,
+    //   press the button "Remove from the shopping list".`
+    //   : '';
+    const congratulateMessage = `Congratulations! You have added the book to the shopping list. To delete,
       press the button "Remove from the shopping list".`
-      : '';
+
+    paragraphCongrat.textContent = congratulateMessage;
+
+    if (isBookAlreadyAdded) {
+      paragraphCongrat.style.display = 'block'
+    } else {
+      paragraphCongrat.style.display = 'none';
+    }
 
     addDelBtn.textContent = buttonText;
-    paragraphCongrat.textContent = paragraphCongratText;
+    // paragraphCongrat.textContent = paragraphCongratText;
 
-    const resize = document.querySelector('.modal');
-    const distance = document.querySelector('.desctop');
+    // const resize = document.querySelector('.modal');
+    // const distance = document.querySelector('.desctop');
 
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
       if (buttonText === 'ADD TO SHOPPING LIST') {
-        addDelBtn.style.width = '211px';
+        // addDelBtn.style.width = '211px';
         addDelBtn.style.left = '62px';
         addDelBtn.style.top = '695px';
-        resize.style.height = '762px';
+
+        // resize.style.height = '762px';
       } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
-        addDelBtn.style.width = '279px';
-        addDelBtn.style.position = 'absolute';
-        addDelBtn.style.left = '28px';
-        addDelBtn.style.top = '700px';
-        resize.style.height = '806px';
+        addDelBtn.style.padding = "14px 23px 14px 23px";
+        // addDelBtn.style.width = '279px';
+        // addDelBtn.style.position = 'absolute';
+        // addDelBtn.style.left = '28px';
+        // addDelBtn.style.top = '700px';
+        // resize.style.height = '806px';
+
       }
     }
 
-    const tablet = window.innerWidth >= 769;
+    // const tablet = window.innerWidth >= 769;
 
-    if (tablet) {
-      if (buttonText === 'ADD TO SHOPPING LIST') {
-        resize.style.height = '465px';
-      } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
-        resize.style.height = '501px';
-      }
-    }
+    // if (tablet) {
+    //   if (buttonText === 'ADD TO SHOPPING LIST') {
+    //     resize.style.height = '465px';
+    //   } else if (buttonText === 'REMOVE FROM THE SHOPPING LIST') {
+    //     // resize.style.height = '501px';
+    //   }
+    // }
   }
   updateButtonAndText();
 
@@ -171,7 +173,7 @@ function closeModal() {
 function removeEventListeners() {
   const modal = document.querySelector('.backdrop');
   const closeModalWindow = document.querySelector('.close-modal');
-  body.style.overflow = "visible";
+  body.style.overflow = 'visible';
   closeModalWindow.removeEventListener('click', closeModal);
   modal.removeEventListener('click', modalClickHandler);
   document.removeEventListener('keydown', keydownHandler);
