@@ -66,7 +66,7 @@ export function renderShopList(data) {
     });
 }
 
-// renderShopList(books)
+renderShopList(books)
 
 function isCorrectNameLength(text) {
     if (window.innerWidth < 768) {
