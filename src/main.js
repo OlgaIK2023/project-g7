@@ -4,7 +4,7 @@ import './js/themechange';
 // import './js/modalwindow';
 import './js/mob-menu';
 
-import './js/scroll-up';
+// import './js/scroll-up';
 
 // import './js/support-ua';
 
