@@ -12,14 +12,16 @@ function closeModalMenu() {
     modalMenu.classList.remove('is-open');
     modalMenu.classList.add('hidden');
     buttonMenu.classList.remove('hidden');
-    buttonClose.classList.add('hidden');
+  buttonClose.classList.add('hidden');
+  document.body.classList.remove('no-scroll');
 }
 
 function openModalMenu() { 
     modalMenu.classList.add('is-open');
     modalMenu.classList.remove('hidden');
     buttonMenu.classList.add('hidden');
-    buttonClose.classList.remove('hidden');
+  buttonClose.classList.remove('hidden');
+  document.body.classList.add('no-scroll');
 }
 
 // mob-menu current page//
@@ -27,7 +29,8 @@ function mobMenuOnCurrentPage() {
    if (shoppingListPage.href===currentUrl || homeListPage.href===currentUrl) {
       buttonClose.classList.add('hidden');
       modalMenu.classList.add('hidden');
-      buttonMenu.classList.remove('hidden');
+     buttonMenu.classList.remove('hidden');
+     document.body.classList.remove('no-scroll');
     };  
 }
 mobMenuOnCurrentPage()
