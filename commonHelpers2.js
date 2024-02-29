@@ -1,9 +1,11 @@
-import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-7b0b263d.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<p class="empty">This page is empty, add some books and proceed to order.</p>
+import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-2601feb5.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<div class="empty-wrapper">
+    <p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
         src="${$}"
         alt="Book"
-        />`,r=t.map(({book_image:s,title:o,author:a,_id:l,description:p,list_name:d,amazon_product_url:m,book_uri:h})=>`<li class="one-book">
+        />
+    </div>`,r=t.map(({book_image:s,title:o,author:a,_id:p,description:l,list_name:d,amazon_product_url:m,book_uri:h})=>`<li class="one-book">
             <img
                 class="img-book"
                 src="${s}"
@@ -13,7 +15,7 @@ import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-7b0b263d.js";
                 <div class="up-part">
                 <h2 class="book-name">${o}</h2>
 
-                <button data-id="${l}" class="basket" type="button">
+                <button data-id="${p}" class="basket" type="button">
                     <svg class="trash" width="16" height="16">
                     <use href="${k}#icon-trash-031"></use>
                     </svg>
@@ -21,7 +23,7 @@ import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-7b0b263d.js";
                 </div>
                 <h3 class="type-name">${d}</h3>
                 <p class="text-discription">
-                ${p}
+                ${l}
                 </p>
 
                 <div class="book-app">
