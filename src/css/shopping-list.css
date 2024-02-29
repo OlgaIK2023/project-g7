@@ -18,11 +18,24 @@ body {
 
 
 
-.shoping-list {
+
+
+.shopping-list {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  margin: auto auto;
+  align-items: center;
+  
+  
 }
 
+.empty{
+  color: var(--text-shopping-list);
+max-width: 244px;
+text-align: center;
+align-content: center;
+font-size: 14px;
+}
 
 
 .main-name-list {
@@ -149,6 +162,12 @@ padding-top: 40px;
 }
 
 @media screen and (min-width: 768px) {
+
+  .empty{
+    font-size: 18px;
+  max-width: 349px;
+  }
+
   .one-book {
     width: 704px;
     height: 213px;
@@ -226,14 +245,10 @@ padding-top: 40px;
   margin: 0 auto;
   align-items: center;
   
-  margin: 0 auto;
+  
 }
 
-/* .support-ua-panel {
-  display: flex;
-  gap: 40px;
-  flex-direction: column;
-} */
+
 
 .container.shopping-list-wrapper {
   display: flex;
@@ -254,18 +269,13 @@ padding-top: 40px;
 /* END of MEDIA */
 
 
-.empty{
-  color: var(--text-shopping-list);
-max-width: 349px;
-text-align: center;
-align-content: center;
-}
+
 
 .list-of-added-books {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
-  
-  
+    
 }
+
