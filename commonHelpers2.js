@@ -1,4 +1,4 @@
-import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-3d51708a.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<div class="empty-wrapper">
+import{l as n,s as k,a as b,b as g,d as u}from"./assets/support-ua-1d859456.js";const $="/project-g7/assets/IMG_9606 1-0439e3af.png",e=document.querySelector(".shopping-list"),v=n();function c(t){e.innerHTML="";const i=`<div class="empty-wrapper">
     <p class="empty">This page is empty, add some books and proceed to order.</p>
         <img
         class="no-book"
