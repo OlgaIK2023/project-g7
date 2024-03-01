@@ -2,7 +2,8 @@ import _ from "lodash";
 import { renderShopList } from "./shopping-list";
 
 const switchButtons = document.querySelectorAll('.switch-btn'),
-    buttonsContainer = document.querySelector('.paggination-btns');
+    buttonsContainer = document.querySelector('.paggination-btns'),
+    pagginationMenu = document.querySelector('.paggination-btns-wrapper');
 
 const getBooksFromLS = JSON.parse(localStorage.getItem('shoppingList'));
 const booksCount = getBooksFromLS.length;
@@ -13,21 +14,18 @@ const data = _.chunk(getBooksFromLS, booksOnPage);
 
 //рендеримо кнопки пагінації
 let currentPage = 0;
-for (let i = 0; i < allPagesCount; i++) {
-    const button = createButton();
-    i === 0 ? button.classList.add('btn', 'currentBtn') : button.classList.add('btn');
-
-
-    button.textContent = i + 1;
-    buttonsContainer.appendChild(button);
-    renderShopList(data[0]);
+if (allPagesCount > 1) {
+    pagginationMenu.style.display = 'flex';
+    createPagginationMenu();
+} else {
+    renderShopList(getBooksFromLS);
 }
 
 //створили вірну кількість кнопок на сторінці
 document.querySelectorAll('.btn').forEach((button, i) => {
     button.addEventListener('click', () => {
         currentPage = i;
-        console.log(currentPage);
+        // console.log(currentPage);
         document.querySelector('.currentBtn').classList.remove('currentBtn');
         button.classList.add('currentBtn');
         renderShopList(data[currentPage]);
@@ -83,4 +81,15 @@ function createButton() {
     button.setAttribute('width', '44');
     button.setAttribute('height', '44');
     return button;
+}
+
+function createPagginationMenu() {
+    for (let i = 0; i < allPagesCount; i++) {
+        const button = createButton();
+        i === 0 ? button.classList.add('btn', 'currentBtn') : button.classList.add('btn');
+
+        button.textContent = i + 1;
+        buttonsContainer.appendChild(button);
+        renderShopList(data[0]);
+    }
 }

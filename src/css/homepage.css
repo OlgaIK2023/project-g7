@@ -226,9 +226,11 @@ background-color: var(--main-bg-color);
 .see-more-btn:hover,
 .see-more-btn:active,
 .see-more-btn:focus {
-    background: rgb(79, 46, 232);
+    background: #4f2ee8;
     color: #E0E0E0;
     transition: 250ms all ease;
+    border: 2px solid rgba(230, 230, 230, 0.443);
+    box-shadow: 0 0 10px rgba(198, 215, 241, 0.63);
 }
 
 .spinner-wrapper{
