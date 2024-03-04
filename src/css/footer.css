@@ -1,0 +1,126 @@
+.footer {
+    background-color: var(--header-bg-color);
+    border: 1.50px solid var(--header-border-color);
+    border-radius: 0 0 8px 8px;
+    z-index: 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+}
+
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 12px;
+}
+
+.email-label {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.email-input {
+    border: 2px solid rgb(79, 46, 232);
+    padding: 14px 28px;
+    border-radius: 40px;
+    background-color: #f6f6f6;
+
+}
+
+.email-input:hover,
+.email-input:focus,
+.email-input:active {
+    outline: none;
+    border: 2px solid #eac645;
+    transition: 250ms all ease;
+}
+
+
+.input-button {
+    background-color: transparent;
+    border: 2px solid rgb(79, 46, 232);
+    border-radius: 40px;
+    object-fit: contain;
+    color: var(--first-titles-color);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -1%;
+    text-align: left;
+    padding: 14px 28px;
+    text-transform: uppercase;
+    transition: 250ms all ease;
+}
+
+.text-container {}
+
+.footer_text {
+    color: var(--color-of-category-text);
+    font-family: inherit;
+}
+
+
+.input-button:hover,
+.input-button:active,
+.input-button:focus {
+    background: rgb(79, 46, 232);
+    color: #E0E0E0;
+    transition: 250ms all ease;
+}
+
+.email-input::placeholder {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+
+@media screen and (min-width:768px) {
+    .footer-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .email-label {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .email-input {
+        margin-right: 10px;
+    }
+}

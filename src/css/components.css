@@ -3,8 +3,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    /* color: #111111;
-    background-color: #F6F6F6; */
+    height: 100%;
     }
     
     .container {
@@ -40,3 +39,6 @@ body{
         }
     }
 
+.wrapp {
+    min-height: 100vh;
+}

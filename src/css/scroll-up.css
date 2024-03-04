@@ -1,7 +1,7 @@
 .scroll-up-btn {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 120px;
+    right: 20px;
     border-radius: 50%;
     width: 64px;
     height: 64px;
@@ -9,6 +9,7 @@
     border-color: transparent;
     border: 5px solid rgba(192, 207, 230, 0.74);
     box-shadow: 0 0 10px rgba(198, 215, 241, 0.63);
+    z-index: 1;
 }
 
 .scroll-up-btn:hover {

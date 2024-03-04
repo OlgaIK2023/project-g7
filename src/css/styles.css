@@ -17,7 +17,7 @@
 @import url('./paggination.css');
 
 @import url('./scroll-up.css');
-
+@import url('./footer.css');
 
 
 :root[data-theme='light']{
