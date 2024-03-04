@@ -14,5 +14,5 @@ import './js/header';
 import './js/local-storage';
 // import './js/shopping-list';
 
-/* import './js/paggination'; */
+import './js/paggination';
 

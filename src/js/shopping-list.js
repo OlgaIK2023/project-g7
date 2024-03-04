@@ -29,24 +29,23 @@ export function renderShopList(data) {
             />
             <div class="discription">
                 <div class="up-part">
-                <h2 class="book-name">${isCorrectNameLength(title)}</h2>
+                    <h2 class="book-name">${isCorrectNameLength(title)}</h2>
 
-                <button data-id="${_id}" class="basket" type="button">
-                    <svg class="trash" width="16" height="16">
-                    <use href="${sprite}#icon-trash-031"></use>
-                    </svg>
-                </button>
+                    <button data-id="${_id}" class="basket" type="button">
+                        <svg class="trash" width="16" height="16">
+                        <use href="${sprite}#icon-trash-031"></use>
+                        </svg>
+                    </button>
+                    <h3 class="type-name">${isCorrectNameLength(list_name)}</h3>
+                    <p class="text-discription">
+                    ${description ? isCorrectTextLength(description) : 'no description'}
+                    </p>
                 </div>
-                <h3 class="type-name">${isCorrectNameLength(list_name)}</h3>
-                <p class="text-discription">
-                ${description ? isCorrectTextLength(description) : 'no description'}
-                </p>
-
                 <div class="book-app">
-                <h3 class="name-author">${isCorrectNameLength(author)}</h3>
-                <div class="books-wrapper">
-                    <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="${amazonIcon}" alt="amazon" /></a>
-                    <a href="${book_uri}" target="_blank"><img class="apple" src="${appleIcon}" alt="apple" /></a>
+                    <h3 class="name-author">${isCorrectNameLength(author)}</h3>
+                    <div class="books-wrapper">
+                        <a href="${amazon_product_url}" target="_blank"><img class="amazon" src="${amazonIcon}" alt="amazon" /></a>
+                        <a href="${book_uri}" target="_blank"><img class="apple" src="${appleIcon}" alt="apple" /></a>
                 </div>
                 </div>
             </div>
@@ -61,6 +60,7 @@ export function renderShopList(data) {
     booksItems.forEach(item => {
         const bookId = item.getAttribute('data-id');
         item.addEventListener('click', () => {
+            window.location.reload();
             deleteFromLS(bookId);
             const updatedBooks = loadFromLS();
             renderShopList(updatedBooks);
@@ -68,11 +68,11 @@ export function renderShopList(data) {
     });
 }
 
-renderShopList(books)
+// renderShopList(books)
 
 function isCorrectNameLength(text) {
     if (window.innerWidth < 768) {
-        const maximumSymbolsCount = 15;
+        const maximumSymbolsCount = 14;
         return (text.length >= maximumSymbolsCount) ? `${text.slice(0, maximumSymbolsCount)}...` : text;
     } else {
         return text;

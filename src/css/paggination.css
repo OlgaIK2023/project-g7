@@ -1,16 +1,18 @@
 .paggination-btns-wrapper{
-    display: flex;
+    display: none;
     flex-direction: row;
-    gap: 24px;
+    gap: 7px;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 .paggination-btns{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
 }
 .btn{
-    width: 44px;
-    height: 44px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: 1px solid rgb(17, 17, 17);
     background-color: transparent;
@@ -23,6 +25,7 @@
 .btn:hover{
     background-color: rgba(17, 17, 17, 0.8);
     color: white;
+    border: 1px solid #4F2EE8;
 }
 .currentBtn{
     background: rgb(17, 17, 17);
@@ -30,14 +33,74 @@
 }
 
 .switch-btn{
-    width: 44px;
-    height: 44px;
+    width: 30px;
+    height: 30px;
     border: 1px solid rgb(17, 17, 17);
     background-color: #EAC645;
     border-radius: 50%;
     transition: 250ms all ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .switch-btn:hover{
+    border: 1px solid #4F2EE8;
     background-color: #4F2EE8;
-    color: white;
+}
+.switch-btn:hover > svg {
+    fill: aliceblue;
+}
+.arrow-icon-left {
+    width: 75%;
+    height: 75%;
+    fill: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+}
+.arrow-icon-right{
+    width: 75%;
+    height: 75%;
+    fill: rgb(0, 0, 0);
+}
+.arrows-icon-end{
+    width: 90%;
+    height: 90%;
+    fill: rgb(0, 0, 0);
+}
+.arrows-icon-start {
+    width: 90%;
+    height: 90%;
+    fill: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 768px) {
+    .paggination-btns-wrapper{
+        gap: 14px;
+    }
+    .btn{
+        width: 38px;
+        height: 38px;
+    }
+    .switch-btn{
+        width: 38px;
+        height: 38px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .paggination-btns-wrapper {
+        gap: 18px;
+    }
+    .btn {
+        width: 44px;
+        height: 44px;
+    }
+    .switch-btn {
+        width: 44px;
+        height: 44px;
+    }
+    .paggination-btns {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 }
