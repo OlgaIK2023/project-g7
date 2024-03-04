@@ -1,14 +1,14 @@
 .paggination-btns-wrapper{
     display: none;
     flex-direction: row;
-    gap: 24px;
+    gap: 7px;
     justify-content: center;
     margin-bottom: 40px;
 }
 .paggination-btns{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
 }
 .btn{
     width: 30px;
@@ -21,7 +21,6 @@
     color: rgb(17, 17, 17);
     font-size: 18px;
     font-weight: 700;
-    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.084);
 }
 .btn:hover{
     background-color: rgba(17, 17, 17, 0.8);
@@ -76,7 +75,7 @@
 
 @media screen and (min-width: 768px) {
     .paggination-btns-wrapper{
-        gap: 18px;
+        gap: 14px;
     }
     .btn{
         width: 38px;
@@ -89,14 +88,19 @@
 }
 @media screen and (min-width: 1440px) {
     .paggination-btns-wrapper {
-            gap: 24px;
-        }
-        .btn {
-            width: 44px;
-            height: 44px;
-        }
-        .switch-btn {
-            width: 44px;
-            height: 44px;
-        }
+        gap: 18px;
+    }
+    .btn {
+        width: 44px;
+        height: 44px;
+    }
+    .switch-btn {
+        width: 44px;
+        height: 44px;
+    }
+    .paggination-btns {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 }
